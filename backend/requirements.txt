@@ -14,4 +14,9 @@ python-dotenv==1.0.0
 tqdm==4.66.1
 sentence-transformers==2.2.2
 numpy==1.26.2
+# Graph-enhanced RAG dependencies
+neo4j==5.14.1
+scispacy==0.5.3
+https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.3/en_core_sci_md-0.5.3.tar.gz
+networkx==3.2.1
 # Note: BioClinicalBERT model weights will be downloaded from Hugging Face automatically.
