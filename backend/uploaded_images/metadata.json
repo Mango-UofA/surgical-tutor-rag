@@ -1,0 +1,74 @@
+{
+  "78e373b1d1bcbe02": {
+    "image_id": "78e373b1d1bcbe02",
+    "filename": "78e373b1d1bcbe02.jpg",
+    "original_filename": "v10_034725.jpg",
+    "upload_timestamp": "2026-01-26T06:46:41.883685",
+    "file_size": 23039,
+    "procedure": null,
+    "quality_score": 23.09949795976228,
+    "detected_instruments": [
+      {
+        "category": "laparoscope",
+        "probability": 0.04466128721833229
+      },
+      {
+        "category": "trocar",
+        "probability": 0.3047635555267334
+      },
+      {
+        "category": "grasper",
+        "probability": 0.43078678846359253
+      },
+      {
+        "category": "scissors",
+        "probability": 0.08126915991306305
+      },
+      {
+        "category": "clip applier",
+        "probability": 0.00033589484519325197
+      }
+    ],
+    "surgical_phase": "clipping and cutting",
+    "file_path": "uploaded_images\\78e373b1d1bcbe02.jpg",
+    "description": null,
+    "width": 578,
+    "height": 324
+  },
+  "c7cc4a2c2554b25c": {
+    "image_id": "c7cc4a2c2554b25c",
+    "filename": "c7cc4a2c2554b25c.jpg",
+    "original_filename": "v10_054775.jpg",
+    "upload_timestamp": "2026-01-26T08:11:38.976395",
+    "file_size": 16289,
+    "procedure": null,
+    "quality_score": 20.17531664622091,
+    "detected_instruments": [
+      {
+        "category": "laparoscope",
+        "probability": 0.033282388001680374
+      },
+      {
+        "category": "trocar",
+        "probability": 0.0010897699976339936
+      },
+      {
+        "category": "grasper",
+        "probability": 0.29058125615119934
+      },
+      {
+        "category": "scissors",
+        "probability": 0.18297737836837769
+      },
+      {
+        "category": "clip applier",
+        "probability": 0.006362446118146181
+      }
+    ],
+    "surgical_phase": "clipping and cutting",
+    "file_path": "uploaded_images\\c7cc4a2c2554b25c.jpg",
+    "description": null,
+    "width": 578,
+    "height": 324
+  }
+}

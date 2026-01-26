@@ -19,4 +19,11 @@ neo4j==5.14.1
 scispacy==0.5.3
 https://s3-us-west-2.amazonaws.com/ai2-s2-scispacy/releases/v0.5.3/en_core_sci_md-0.5.3.tar.gz
 networkx==3.2.1
-# Note: BioClinicalBERT model weights will be downloaded from Hugging Face automatically.
+
+# Multimodal RAG dependencies (MICCAI)
+open-clip-torch==2.24.0
+pillow==10.1.0
+opencv-python==4.8.1.78
+ftfy==6.1.3
+regex==2023.12.25
+# Note: BioClinicalBERT and BiomedCLIP model weights will be downloaded from Hugging Face automatically.

@@ -45,7 +45,7 @@ export default function UploadPanel(){
   }
 
   return (
-    <div className="bg-white/90 backdrop-blur-xl border border-white/50 shadow-2xl rounded-2xl p-6 hover:shadow-3xl transition-all duration-300 min-h-[500px] flex flex-col">
+    <div className="bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl border border-white/50 dark:border-emerald-500/20 shadow-2xl dark:shadow-emerald-500/10 rounded-2xl p-6 hover:shadow-3xl dark:hover:shadow-emerald-500/20 transition-all duration-300 min-h-[500px] max-h-[800px] overflow-y-auto flex flex-col">
       <div className="flex items-center gap-3 mb-6">
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl blur-md opacity-50"></div>
@@ -56,8 +56,8 @@ export default function UploadPanel(){
           </div>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-gray-800">Upload Documents</h3>
-          <p className="text-sm text-gray-500">Add surgical guidelines & training materials</p>
+          <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">Upload Documents</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Add surgical guidelines & training materials</p>
         </div>
       </div>
 

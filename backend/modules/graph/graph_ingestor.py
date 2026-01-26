@@ -8,9 +8,9 @@ Processes PDFs to extract both:
 from typing import List, Dict, Any, Optional
 import logging
 from ..data_ingestion.pdf_parser import extract_text_from_pdf_bytes
-from ..data_ingestion.chunker import chunk_text
-from ..embedder.embedder import BioClinicalBERTEmbedder
-from ..retriever.faiss_manager import FAISSManager
+from ..data_ingestion.chunker import simple_chunk_text
+from ..embedder.embedder import BioClinicalEmbedder
+from ..retriever.faiss_manager import FaissManager
 from ..graph.neo4j_manager import Neo4jManager
 from ..graph.entity_extractor import MedicalEntityExtractor
 
@@ -23,8 +23,8 @@ class GraphEnhancedIngestor:
     """
     
     def __init__(self,
-                 embedder: BioClinicalBERTEmbedder,
-                 faiss_manager: FAISSManager,
+                 embedder: BioClinicalEmbedder,
+                 faiss_manager: FaissManager,
                  neo4j_manager: Optional[Neo4jManager] = None,
                  entity_extractor: Optional[MedicalEntityExtractor] = None,
                  build_graph: bool = True):
@@ -85,20 +85,22 @@ class GraphEnhancedIngestor:
             
             # Step 2: Chunk text for vector embeddings
             logger.info("Chunking text")
-            chunks = chunk_text(full_text)
+            chunks = simple_chunk_text(full_text)
             stats['chunks_created'] = len(chunks)
             
             # Step 3: Create embeddings and add to FAISS
             logger.info(f"Creating embeddings for {len(chunks)} chunks")
-            for i, chunk in enumerate(chunks):
-                embedding = self.embedder.embed_text(chunk)
+            embeddings = self.embedder.embed_texts(chunks)
+            
+            for i, (chunk, embedding) in enumerate(zip(chunks, embeddings)):
                 chunk_metadata = {
                     'source': filename,
                     'chunk_index': i,
                     'total_chunks': len(chunks),
+                    'text': chunk,
                     **(metadata or {})
                 }
-                self.faiss.add_document(chunk, embedding, chunk_metadata)
+                self.faiss.add([embedding], [chunk_metadata])
             
             stats['embeddings_added'] = len(chunks)
             

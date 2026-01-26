@@ -85,7 +85,7 @@ class Neo4jManager:
         Args:
             name: Procedure name
             description: Procedure description
-            metadata: Additional metadata (difficulty, duration, etc.)
+            metadata: Additional metadata (ignored for now to avoid Neo4j type issues)
         
         Returns:
             Node ID
@@ -95,13 +95,12 @@ class Neo4jManager:
                 MERGE (p:Procedure {name: $name})
                 ON CREATE SET 
                     p.description = $description,
-                    p.created_at = datetime(),
-                    p.metadata = $metadata
+                    p.created_at = datetime()
                 ON MATCH SET
                     p.description = CASE WHEN $description <> '' THEN $description ELSE p.description END,
                     p.updated_at = datetime()
                 RETURN elementId(p) as id
-            """, name=name, description=description, metadata=metadata or {})
+            """, name=name, description=description)
             
             record = result.single()
             return record["id"] if record else None
@@ -114,7 +113,7 @@ class Neo4jManager:
         Args:
             entity_type: Node label (Anatomy, Instrument, Complication, etc.)
             name: Entity name
-            properties: Additional properties
+            properties: Additional properties (ignored for now to avoid Neo4j type issues)
         
         Returns:
             Node ID
@@ -123,12 +122,11 @@ class Neo4jManager:
             result = session.run(f"""
                 MERGE (e:{entity_type} {{name: $name}})
                 ON CREATE SET 
-                    e += $properties,
                     e.created_at = datetime()
                 ON MATCH SET
                     e.updated_at = datetime()
                 RETURN elementId(e) as id
-            """, name=name, properties=properties or {})
+            """, name=name)
             
             record = result.single()
             return record["id"] if record else None
@@ -146,7 +144,7 @@ class Neo4jManager:
             relationship_type: Type of relationship
             from_label: Label of source node
             to_label: Label of target node
-            properties: Relationship properties
+            properties: Relationship properties (ignored for now to avoid Neo4j type issues)
         
         Returns:
             Success status
@@ -157,10 +155,9 @@ class Neo4jManager:
                 MATCH (to:{to_label} {{name: $to_node}})
                 MERGE (from)-[r:{relationship_type}]->(to)
                 ON CREATE SET 
-                    r += $properties,
                     r.created_at = datetime()
                 RETURN r
-            """, from_node=from_node, to_node=to_node, properties=properties or {})
+            """, from_node=from_node, to_node=to_node)
             
             return result.single() is not None
     

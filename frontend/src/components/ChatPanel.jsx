@@ -38,7 +38,7 @@ export default function ChatPanel({level}){
   }
 
   return (
-    <div className="bg-white/90 backdrop-blur-xl border border-white/50 shadow-2xl rounded-2xl p-6 hover:shadow-3xl transition-all duration-300 flex flex-col min-h-[500px]">
+    <div className="bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl border border-white/50 dark:border-cyan-500/20 shadow-2xl dark:shadow-cyan-500/10 rounded-2xl p-6 hover:shadow-3xl dark:hover:shadow-cyan-500/20 transition-all duration-300 flex flex-col min-h-[500px] max-h-[800px] overflow-hidden">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
         <div className="relative">
@@ -50,15 +50,15 @@ export default function ChatPanel({level}){
           </div>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-gray-800">AI Assistant</h3>
-          <p className="text-sm text-gray-500">Ask questions about surgical procedures</p>
+          <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">AI Assistant</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Ask questions about surgical procedures</p>
         </div>
       </div>
 
       {/* Chat Messages */}
-      <div className="flex-1 overflow-auto mb-4 bg-gradient-to-b from-slate-50 to-blue-50 p-4 rounded-xl space-y-4 border-2 border-blue-100 flex flex-col">
+      <div className="flex-1 overflow-auto mb-4 bg-gradient-to-b from-slate-50 to-blue-50 dark:from-slate-950/50 dark:to-cyan-950/30 p-4 rounded-xl space-y-4 border-2 border-blue-100 dark:border-cyan-500/20 flex flex-col transition-colors duration-300">
         {messages.length === 0 && !loading && (
-          <div className="flex-1 flex items-center justify-center text-gray-400">
+          <div className="flex-1 flex items-center justify-center text-gray-400 dark:text-gray-500">
             <div className="text-center">
               <svg className="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -73,8 +73,8 @@ export default function ChatPanel({level}){
           <div key={i} className={`flex ${m.from==='user' ? 'justify-end' : 'justify-start'} animate-fade-in`}>
             <div className={`max-w-[85%] ${
               m.from==='user' 
-                ? 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-2xl rounded-tr-md shadow-lg' 
-                : 'bg-white text-gray-800 rounded-2xl rounded-tl-md shadow-lg border-2 border-blue-100'
+                  ? 'bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-cyan-600 dark:to-blue-600 text-white rounded-2xl rounded-tr-md shadow-lg' 
+                  : 'bg-white dark:bg-slate-800/90 text-gray-800 dark:text-slate-100 rounded-2xl rounded-tl-md shadow-lg border-2 border-blue-100 dark:border-cyan-500/30'
             } p-4`}>
               <div className="whitespace-pre-wrap">{m.text}</div>
               {m.contexts && m.contexts.length > 0 && (

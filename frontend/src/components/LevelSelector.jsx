@@ -8,17 +8,17 @@ export default function LevelSelector({level, setLevel}){
   ]
   
   return (
-    <div className="bg-white/90 backdrop-blur-xl border border-white/50 shadow-2xl rounded-2xl p-6 hover:shadow-3xl transition-all duration-300">
+    <div className="bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl border border-white/50 dark:border-indigo-500/20 shadow-2xl dark:shadow-indigo-500/10 rounded-2xl p-6 hover:shadow-3xl dark:hover:shadow-indigo-500/20 transition-all duration-300">
       <div className="flex items-center gap-3 mb-6">
         <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl blur-md opacity-50"></div>
-          <div className="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-400 dark:to-indigo-500 rounded-xl blur-md opacity-50"></div>
+          <div className="relative w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 dark:from-blue-400 dark:to-indigo-500 rounded-xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform duration-300">
             <span className="text-2xl">📊</span>
           </div>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-gray-800">Learning Level</h3>
-          <p className="text-sm text-gray-500">Select your expertise level</p>
+          <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">Learning Level</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Select your expertise level</p>
         </div>
       </div>
       
@@ -28,8 +28,8 @@ export default function LevelSelector({level, setLevel}){
             key={l.name}
             className={`relative group overflow-hidden p-6 rounded-xl transition-all duration-300 transform hover:scale-105 ${
               l.name === level 
-                ? `bg-gradient-to-br ${l.color} text-white shadow-2xl ring-4 ring-offset-2 ring-blue-300` 
-                : 'bg-white border-2 border-gray-200 text-gray-700 hover:border-blue-400 hover:shadow-xl'
+                ? `bg-gradient-to-br ${l.color} text-white shadow-2xl ring-4 ring-offset-2 dark:ring-offset-slate-950 ring-blue-300 dark:ring-cyan-500/50` 
+                : 'bg-white dark:bg-slate-800/90 border-2 border-gray-200 dark:border-slate-600 text-gray-700 dark:text-slate-200 hover:border-blue-400 dark:hover:border-cyan-500 hover:shadow-xl'
             }`}
             onClick={() => setLevel(l.name)}
           >

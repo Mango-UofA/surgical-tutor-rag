@@ -1,14 +1,14 @@
 import os
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from openai import OpenAI as OpenAIClient
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 
 
 class Generator:
-    def __init__(self, openai_api_key: str | None = None, base_url: str | None = None, model: str | None = None):
+    def __init__(self, openai_api_key: Optional[str] = None, base_url: Optional[str] = None, model: Optional[str] = None):
         self.openai_api_key = openai_api_key or OPENAI_API_KEY
         self.base_url = base_url or OPENAI_BASE_URL
         self.model = model or OPENAI_MODEL

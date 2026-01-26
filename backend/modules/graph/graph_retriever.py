@@ -7,7 +7,7 @@ to provide comprehensive and contextually rich results.
 from typing import List, Dict, Any, Optional, Tuple
 import numpy as np
 import logging
-from ..retriever.faiss_manager import FAISSManager
+from ..retriever.faiss_manager import FaissManager
 from .neo4j_manager import Neo4jManager
 from .entity_extractor import MedicalEntityExtractor
 
@@ -26,9 +26,10 @@ class GraphEnhancedRetriever:
     """
     
     def __init__(self, 
-                 faiss_manager: FAISSManager,
+                 faiss_manager: FaissManager,
                  neo4j_manager: Neo4jManager,
                  entity_extractor: MedicalEntityExtractor,
+                 embedder,
                  vector_weight: float = 0.6,
                  graph_weight: float = 0.4):
         """
@@ -38,12 +39,14 @@ class GraphEnhancedRetriever:
             faiss_manager: FAISS vector store manager
             neo4j_manager: Neo4j graph database manager
             entity_extractor: Medical entity extraction system
+            embedder: BioClinicalEmbedder instance
             vector_weight: Weight for vector similarity scores (0-1)
             graph_weight: Weight for graph relevance scores (0-1)
         """
         self.faiss = faiss_manager
         self.graph = neo4j_manager
         self.extractor = entity_extractor
+        self.embedder = embedder
         
         # Ensure weights sum to 1
         total_weight = vector_weight + graph_weight
@@ -102,7 +105,11 @@ class GraphEnhancedRetriever:
             List of documents with vector similarity scores
         """
         try:
-            results = self.faiss.search(query, top_k=top_k)
+            # Create query embedding
+            query_embedding = self.embedder.embed_texts([query])[0]
+            
+            # Query FAISS
+            results = self.faiss.query(query_embedding, top_k=top_k)
             
             # Add retrieval source
             for result in results:

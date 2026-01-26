@@ -6,8 +6,13 @@ load_dotenv()
 MONGODB_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017/surgical_tutor")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4")
+OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 FAISS_INDEX_PATH = os.getenv("FAISS_INDEX_PATH", "./faiss_index.index")
+
+# Image storage configuration
+IMAGE_STORAGE_PATH = os.getenv("IMAGE_STORAGE_PATH", "./uploaded_images")
+ENABLE_STREAMING = os.getenv("ENABLE_STREAMING", "true").lower() == "true"
+MAX_SIMILAR_IMAGES = int(os.getenv("MAX_SIMILAR_IMAGES", "5"))
 
 # Graph database configuration
 NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")

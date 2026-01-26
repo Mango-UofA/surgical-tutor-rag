@@ -30,9 +30,21 @@ export default function QuizPanel({level}){
       const res = await axios.post('http://localhost:8000/quiz/start', fd)
       const duration = ((Date.now() - startTime) / 1000).toFixed(2)
       console.log(`✅ Quiz received in ${duration}s:`, res.data)
-      setQuiz(res.data.quiz)
+      console.log('Quiz object:', res.data.quiz)
+      console.log('Questions array:', res.data.quiz?.questions)
+      console.log('Questions count:', res.data.quiz?.questions?.length)
+      
+      if (res.data.quiz?.error) {
+        setError(res.data.quiz.error)
+      } else if (!res.data.quiz?.questions || res.data.quiz.questions.length === 0) {
+        setError('No questions generated. Please try again.')
+        console.warn('Empty questions array:', res.data.quiz)
+      } else {
+        setQuiz(res.data.quiz)
+      }
     } catch (err) {
       console.error('❌ Quiz generation failed:', err)
+      console.error('Error response:', err.response?.data)
       setError(err.response?.data?.detail || err.message || 'Failed to generate quiz')
     } finally {
       setLoading(false)
@@ -64,7 +76,7 @@ export default function QuizPanel({level}){
   }
 
   return (
-    <div className="bg-white/90 backdrop-blur-xl border border-white/50 shadow-2xl rounded-2xl p-6 hover:shadow-3xl transition-all duration-300">
+    <div className="bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl border border-white/50 dark:border-purple-500/20 shadow-2xl dark:shadow-purple-500/10 rounded-2xl p-6 hover:shadow-3xl dark:hover:shadow-purple-500/20 transition-all duration-300 min-h-[500px] max-h-[800px] overflow-y-auto flex flex-col">
       <div className="flex items-center gap-3 mb-6">
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl blur-md opacity-50"></div>
@@ -75,8 +87,8 @@ export default function QuizPanel({level}){
           </div>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-gray-800">Practice Quiz</h3>
-          <p className="text-sm text-gray-500">Test your knowledge with AI-generated questions</p>
+          <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100">Practice Quiz</h3>
+          <p className="text-sm text-gray-500 dark:text-gray-400">Test your knowledge with AI-generated questions</p>
         </div>
       </div>
 
