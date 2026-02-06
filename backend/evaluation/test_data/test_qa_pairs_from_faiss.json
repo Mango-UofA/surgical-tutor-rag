@@ -1,0 +1,115 @@
+{
+  "qa_pairs": [
+    {
+      "question": "What was the sample size and evidence quality regarding early versus delayed open appendectomy for appendiceal phlegmon?",
+      "answer": "The sample size was 40 participants, and there was insufficient evidence to determine the effect of early versus delayed open appendectomy on overall morbidity, wound infection, or fecal fistula, with the evidence for increased hospital stay and time away from normal activities being of very low quality.",
+      "chunk_id": 60,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 236
+    },
+    {
+      "question": "What is the diagnostic performance of staged algorithms involving ultrasound followed by conditional MRI imaging in the workup of pediatric acute appendicitis?",
+      "answer": "The diagnostic performance of staged algorithms involving ultrasound followed by conditional MRI imaging for pediatric acute appendicitis is high, with a sensitivity of 98.2% and a specificity of 97.1%.",
+      "chunk_id": 33,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 121
+    },
+    {
+      "question": "What are the advantages of laparoscopic appendectomy compared to open appendectomy in pregnant patients?",
+      "answer": "Laparoscopic appendectomy in pregnant patients is associated with a shorter length of hospital stay and a lower incidence of surgical site infection compared to open appendectomy.",
+      "chunk_id": 14,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 14
+    },
+    {
+      "question": "What is the recommended timing for an appendectomy in children with complicated appendicitis and uncomplicated appendicitis?",
+      "answer": "For complicated appendicitis, early appendectomy (within 8 hours) is recommended, while for uncomplicated appendicitis, appendectomy should not be delayed beyond 24 hours from admission.",
+      "chunk_id": 42,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 306
+    },
+    {
+      "question": "What is the reported success rate of outpatient management for patients with uncomplicated acute appendicitis?",
+      "answer": "The overall success rate with outpatient management for uncomplicated acute appendicitis is 85%.",
+      "chunk_id": 46,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 398
+    },
+    {
+      "question": "What are the differences in operative time and incidence of surgical site infection (SSI) between SILA and three-port laparoscopic appendectomy (LA)?",
+      "answer": "SILA is associated with a longer operative time and a higher incidence of surgical site infection (SSI) compared to three-port laparoscopic appendectomy (LA).",
+      "chunk_id": 45,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 397
+    },
+    {
+      "question": "Who contributed equally to the manuscript and share the first authorship in the document mentioned in the text?",
+      "answer": "SDS and MP contributed equally to the manuscript and both share the first authorship.",
+      "chunk_id": 68,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 156
+    },
+    {
+      "question": "What do guidelines recommend when no visual abnormalities are found in the appendix during surgery for suspected acute appendicitis?",
+      "answer": "The SAGES 2010 guidelines recommend that the decision to remove the appendix be based on the individual clinical scenario, while the EAES 2016 guidelines recommend performing an appendectomy if the appendix appears normal during surgery for suspected acute appendicitis.",
+      "chunk_id": 57,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 57
+    },
+    {
+      "question": "What is the recommendation for treating uncomplicated acute appendicitis with non-operative management (NOM) during pregnancy?",
+      "answer": "The recommendation is to suggest against treating acute appendicitis non-operatively during pregnancy until further high-level evidence is available, due to very low quality of evidence and weak strength of recommendation.",
+      "chunk_id": 36,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 212
+    },
+    {
+      "question": "What are the benefits of administering oral antibiotics after appendectomy for perforated appendicitis in children compared to intravenous antibiotics?",
+      "answer": "Administering oral antibiotics is associated with equivalent outcomes, shorter hospitalizations, fewer medical encounters, lower rates of repeated ultrasound imaging and PICC placement, and decreased hospital charges compared to intravenous antibiotics.",
+      "chunk_id": 67,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 243
+    },
+    {
+      "question": "What is the focus of the studies referenced in the text regarding the treatment of perforated appendicitis in pediatric patients?",
+      "answer": "The studies examine the efficacy and safety of transitioning to oral antibiotics for treating post-operative abscess and perforated appendicitis in children.",
+      "chunk_id": 87,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 263
+    },
+    {
+      "question": "What antibiotic regimens are recommended for non-critically ill patients with community-acquired intra-abdominal infections according to the 2017 WSES guidelines?",
+      "answer": "The recommended antibiotic regimens are Amoxicillin/clavulanate 1.2 –2.2 g 6-hourly or ceftriaxone 2 g 24-hourly combined with metronidazole 500 mg 6-hourly or cefotaxime 2 g 8-hourly.",
+      "chunk_id": 38,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 38
+    },
+    {
+      "question": "What are some approaches to treating uncomplicated acute appendicitis mentioned in the text?",
+      "answer": "The text mentions both antibiotic treatment and appendectomy as approaches for treating uncomplicated acute appendicitis.",
+      "chunk_id": null,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 497
+    },
+    {
+      "question": "What diagnostic tool is recommended as the first-line investigation for acute appendicitis in both adults and children?",
+      "answer": "POCUS (Point-of-care Ultrasound) is recommended as the most appropriate first-line diagnostic tool for acute appendicitis in both adults and children.",
+      "chunk_id": 10,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 362
+    },
+    {
+      "question": "What is the association between the antibiotics-first strategy for uncomplicated acute appendicitis and surgical outcomes?",
+      "answer": "The antibiotics-first strategy for uncomplicated acute appendicitis in adults is associated with increased rates of peritonitis at surgery, as indicated in a systematic review with meta-analysis of randomized controlled trials.",
+      "chunk_id": 79,
+      "source": "WSES Jerusalem Guidelines – Acute Appendicitis.pdf",
+      "faiss_index": 431
+    }
+  ],
+  "metadata": {
+    "num_pairs": 15,
+    "faiss_index_path": "faiss_index.index",
+    "total_faiss_vectors": 510,
+    "generated_date": "2026-01-29"
+  }
+}

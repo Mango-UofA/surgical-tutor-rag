@@ -1,0 +1,40 @@
+{
+  "dataset": {
+    "test_file": "test_data/test_qa_pairs_from_faiss.json",
+    "questions_per_chunk": 3,
+    "test_ratio": 0.2
+  },
+  "evaluation": {
+    "k_values": [1, 3, 5, 10],
+    "include_bleu": true,
+    "include_rouge": true,
+    "use_nli_hallucination": false
+  },
+  "faiss_index_path": "../faiss_index.index",
+  "bioclinicalbert_model": "emilyalsentzer/Bio_ClinicalBERT",
+  "scispacy_model": "en_core_sci_md",
+  "neo4j": {
+    "uri": "bolt://localhost:7687",
+    "user": "neo4j",
+    "password": "surgical123"
+  },
+  "api_key": "${OPENROUTER_API_KEY}",
+  "embeddings": {
+    "biomedical_model": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext",
+    "general_model": "sentence-transformers/all-MiniLM-L6-v2"
+  },
+  "ablation_configs": [
+    "full_hybrid",
+    "vector_only",
+    "graph_only",
+    "equal_weight",
+    "vector_heavy",
+    "graph_heavy"
+  ],
+  "baselines": [
+    "bm25",
+    "dense_retrieval",
+    "openai_embeddings",
+    "vanilla_gpt"
+  ]
+}

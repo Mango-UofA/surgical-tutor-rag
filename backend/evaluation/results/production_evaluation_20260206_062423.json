@@ -1,0 +1,95 @@
+{
+  "experiment_id": "20260206_062423",
+  "timestamp": "2026-02-06T06:24:23.978431",
+  "faiss_index_size": 598,
+  "num_queries": 10,
+  "query_results": [
+    {
+      "query": "What are the diagnostic criteria for acute appendicitis?",
+      "category": "diagnosis",
+      "avg_score": 0.017947785556316376,
+      "keyword_relevance": 0.2,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "What are the complications of appendectomy?",
+      "category": "complications",
+      "avg_score": 0.017039716243743896,
+      "keyword_relevance": 0.0,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "What imaging modalities are recommended for diagnosing appendicitis?",
+      "category": "imaging",
+      "avg_score": -0.0012119542807340622,
+      "keyword_relevance": 0.2,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "What is the role of ultrasound in pediatric appendicitis?",
+      "category": "pediatric",
+      "avg_score": 0.0176504235714674,
+      "keyword_relevance": 0.0,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "When should laparoscopic versus open appendectomy be performed?",
+      "category": "surgical",
+      "avg_score": -0.012024945579469204,
+      "keyword_relevance": 0.2,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "What antibiotics are recommended for complicated appendicitis?",
+      "category": "treatment",
+      "avg_score": -0.0016574282199144363,
+      "keyword_relevance": 0.0,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "What is the success rate of non-operative management for appendicitis?",
+      "category": "treatment",
+      "avg_score": -0.000330854207277298,
+      "keyword_relevance": 0.0,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "What are the advantages of laparoscopic appendectomy in pregnancy?",
+      "category": "special_populations",
+      "avg_score": 0.005754185374826193,
+      "keyword_relevance": 0.0,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "What is the optimal timing for appendectomy?",
+      "category": "surgical_timing",
+      "avg_score": -0.008184746839106083,
+      "keyword_relevance": 0.0,
+      "diversity": 0.2,
+      "num_results": 5
+    },
+    {
+      "query": "How should appendiceal phlegmon be managed?",
+      "category": "complications",
+      "avg_score": 0.0015646452084183693,
+      "keyword_relevance": 1.0,
+      "diversity": 0.2,
+      "num_results": 5
+    }
+  ],
+  "overall_metrics": {
+    "avg_retrieval_score": 0.003654682682827115,
+    "avg_keyword_relevance": 0.16,
+    "avg_diversity": 0.2,
+    "retrieval_success_rate": 0.5,
+    "high_relevance_rate": 0.1
+  }
+}

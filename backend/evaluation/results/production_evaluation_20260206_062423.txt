@@ -1,0 +1,80 @@
+================================================================================
+PRODUCTION-REALISTIC RAG EVALUATION REPORT
+================================================================================
+
+Experiment ID: 20260206_062423
+Generated: 2026-02-06T06:24:23.978431
+FAISS Index Size: 598 vectors
+Number of Test Queries: 10
+
+OVERALL METRICS
+--------------------------------------------------------------------------------
+avg_retrieval_score: 0.0037
+avg_keyword_relevance: 0.1600
+avg_diversity: 0.2000
+retrieval_success_rate: 0.5000
+high_relevance_rate: 0.1000
+
+
+PER-QUERY RESULTS
+--------------------------------------------------------------------------------
+
+Query: What are the diagnostic criteria for acute appendicitis?
+  Category: diagnosis
+  Retrieval Score: 0.0179
+  Keyword Relevance: 20.00%
+  Diversity: 20.00%
+
+Query: What are the complications of appendectomy?
+  Category: complications
+  Retrieval Score: 0.0170
+  Keyword Relevance: 0.00%
+  Diversity: 20.00%
+
+Query: What imaging modalities are recommended for diagnosing appendicitis?
+  Category: imaging
+  Retrieval Score: -0.0012
+  Keyword Relevance: 20.00%
+  Diversity: 20.00%
+
+Query: What is the role of ultrasound in pediatric appendicitis?
+  Category: pediatric
+  Retrieval Score: 0.0177
+  Keyword Relevance: 0.00%
+  Diversity: 20.00%
+
+Query: When should laparoscopic versus open appendectomy be performed?
+  Category: surgical
+  Retrieval Score: -0.0120
+  Keyword Relevance: 20.00%
+  Diversity: 20.00%
+
+Query: What antibiotics are recommended for complicated appendicitis?
+  Category: treatment
+  Retrieval Score: -0.0017
+  Keyword Relevance: 0.00%
+  Diversity: 20.00%
+
+Query: What is the success rate of non-operative management for appendicitis?
+  Category: treatment
+  Retrieval Score: -0.0003
+  Keyword Relevance: 0.00%
+  Diversity: 20.00%
+
+Query: What are the advantages of laparoscopic appendectomy in pregnancy?
+  Category: special_populations
+  Retrieval Score: 0.0058
+  Keyword Relevance: 0.00%
+  Diversity: 20.00%
+
+Query: What is the optimal timing for appendectomy?
+  Category: surgical_timing
+  Retrieval Score: -0.0082
+  Keyword Relevance: 0.00%
+  Diversity: 20.00%
+
+Query: How should appendiceal phlegmon be managed?
+  Category: complications
+  Retrieval Score: 0.0016
+  Keyword Relevance: 100.00%
+  Diversity: 20.00%

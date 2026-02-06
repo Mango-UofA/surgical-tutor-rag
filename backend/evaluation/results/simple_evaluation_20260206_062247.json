@@ -1,0 +1,22 @@
+{
+  "retrieval_metrics": {
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0,
+    "mrr": 0.0
+  },
+  "embedding_quality": {
+    "avg_similarity": 0.9365995796836444,
+    "min_similarity": 0.8989161088224172,
+    "max_similarity": 0.9670355916703735
+  },
+  "query_performance": {
+    "avg_results_per_query": 5.0,
+    "avg_top_score": 0.0016946034505963326
+  },
+  "experiment_id": "20260206_062247",
+  "timestamp": "2026-02-06T06:22:47.246517",
+  "num_test_samples": 30,
+  "faiss_index_size": 598
+}

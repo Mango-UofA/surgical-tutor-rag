@@ -1,0 +1,30 @@
+# Evaluation Requirements
+# Install these packages for running the comprehensive evaluation suite
+
+# Core evaluation metrics
+rank-bm25==0.2.2
+scikit-learn==1.3.2
+
+# Statistical analysis
+scipy==1.11.4
+statsmodels==0.14.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# Data handling
+pandas==2.1.4
+
+# Async HTTP for API calls
+aiohttp==3.9.1
+
+# Semantic similarity (for better QA evaluation)
+sentence-transformers>=2.2.0
+
+# NLP metrics (optional, for advanced metrics)
+# nltk==3.8.1
+# rouge-score==0.1.2
+
+# Progress bars
+tqdm==4.66.1

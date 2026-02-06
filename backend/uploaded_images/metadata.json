@@ -70,5 +70,77 @@
     "description": null,
     "width": 578,
     "height": 324
+  },
+  "87b9e810d4209742": {
+    "image_id": "87b9e810d4209742",
+    "filename": "87b9e810d4209742.jpg",
+    "original_filename": "v10_064925_flip.jpg",
+    "upload_timestamp": "2026-01-29T21:24:40.357160",
+    "file_size": 17295,
+    "procedure": null,
+    "quality_score": 21.379924666513812,
+    "detected_instruments": [
+      {
+        "category": "laparoscope",
+        "probability": 0.06527258455753326
+      },
+      {
+        "category": "trocar",
+        "probability": 0.0027728001587092876
+      },
+      {
+        "category": "grasper",
+        "probability": 0.6280343532562256
+      },
+      {
+        "category": "scissors",
+        "probability": 0.02639857679605484
+      },
+      {
+        "category": "clip applier",
+        "probability": 0.0003573270223569125
+      }
+    ],
+    "surgical_phase": "hemostasis and irrigation",
+    "file_path": "uploaded_images\\87b9e810d4209742.jpg",
+    "description": null,
+    "width": 578,
+    "height": 324
+  },
+  "d802aa11e61e03d0": {
+    "image_id": "d802aa11e61e03d0",
+    "filename": "d802aa11e61e03d0.jpg",
+    "original_filename": "v10_064275.jpg",
+    "upload_timestamp": "2026-01-30T13:35:42.721145",
+    "file_size": 24844,
+    "procedure": null,
+    "quality_score": 28.195569321269456,
+    "detected_instruments": [
+      {
+        "category": "laparoscope",
+        "probability": 0.0023079020902514458
+      },
+      {
+        "category": "trocar",
+        "probability": 0.0004444575170055032
+      },
+      {
+        "category": "grasper",
+        "probability": 0.5432554483413696
+      },
+      {
+        "category": "scissors",
+        "probability": 0.271374374628067
+      },
+      {
+        "category": "clip applier",
+        "probability": 0.09852853417396545
+      }
+    ],
+    "surgical_phase": "hemostasis and irrigation",
+    "file_path": "uploaded_images\\d802aa11e61e03d0.jpg",
+    "description": null,
+    "width": 578,
+    "height": 324
   }
 }
