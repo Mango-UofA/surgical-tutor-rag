@@ -4,7 +4,7 @@ motor==3.3.2
 pymongo==4.6.0
 langchain==0.1.0
 langchain-openai==0.0.2
-openai==1.6.1
+openai>=1.12.0
 transformers==4.36.0
 # Use CPU-only PyTorch to avoid CUDA bloat on Railway (no GPU available)
 --extra-index-url https://download.pytorch.org/whl/cpu
