@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { API_BASE_URL } from '../config'
 
 export default function VisualQAPanel() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -74,7 +75,7 @@ export default function VisualQAPanel() {
     formData.append('question', question)
 
     try {
-      const res = await fetch('http://localhost:8000/visual_qa', {
+      const res = await fetch(`${API_BASE_URL}/visual_qa`, {
         method: 'POST',
         body: formData
       })

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { API_BASE_URL } from '../config'
 
 export default function QuizPanel({level}){
   const [topic, setTopic] = useState('central line insertion')
@@ -27,7 +28,7 @@ export default function QuizPanel({level}){
     try {
       console.log('📤 Sending request to backend...')
       const startTime = Date.now()
-      const res = await axios.post('http://localhost:8000/quiz/start', fd)
+      const res = await axios.post(`${API_BASE_URL}/quiz/start`, fd)
       const duration = ((Date.now() - startTime) / 1000).toFixed(2)
       console.log(`✅ Quiz received in ${duration}s:`, res.data)
       console.log('Quiz object:', res.data.quiz)

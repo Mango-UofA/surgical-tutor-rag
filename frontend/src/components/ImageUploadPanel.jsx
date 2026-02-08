@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-
+import React, { useState } from 'react'import { API_BASE_URL } from '../config';
 export default function ImageUploadPanel() {
   const [selectedImage, setSelectedImage] = useState(null)
   const [imagePreview, setImagePreview] = useState(null)
@@ -66,7 +65,7 @@ export default function ImageUploadPanel() {
     if (procedure) formData.append('procedure', procedure)
 
     try {
-      const res = await fetch('http://localhost:8000/upload_image', {
+      const res = await fetch(`${API_BASE_URL}/upload_image`, {
         method: 'POST',
         body: formData
       })

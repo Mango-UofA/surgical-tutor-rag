@@ -25,7 +25,7 @@ export default function ChatPanel({level}){
     try{
       console.log('📤 Sending request to backend...')
       const startTime = Date.now()
-      const res = await axios.post('http://localhost:8000/chat', fd)
+      const res = await axios.post(`${API_BASE_URL}/chat`, fd)
       const duration = ((Date.now() - startTime) / 1000).toFixed(2)
       console.log(`✅ Response received in ${duration}s:`, res.data)
       setMessages(prev=>[...prev, {from:'bot', text: res.data.answer, contexts: res.data.contexts}])

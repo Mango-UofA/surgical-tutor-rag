@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import { API_BASE_URL } from '../config'
 
 export default function UploadPanel(){
   const [file, setFile] = useState(null)
@@ -23,8 +24,8 @@ export default function UploadPanel(){
     }, 200)
     
     try{
-      console.log('📡 Sending POST request to http://localhost:8000/upload_pdf')
-      const res = await axios.post('http://localhost:8000/upload_pdf', fd, {headers: {'Content-Type': 'multipart/form-data'}})
+      console.log(`📡 Sending POST request to ${API_BASE_URL}/upload_pdf`)
+      const res = await axios.post(`${API_BASE_URL}/upload_pdf`, fd, {headers: {'Content-Type': 'multipart/form-data'}})
       clearInterval(progressInterval)
       setProgress(100)
       console.log('✅ Upload successful:', res.data)
