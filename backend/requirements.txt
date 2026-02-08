@@ -6,7 +6,10 @@ langchain==0.1.0
 langchain-openai==0.0.2
 openai==1.6.1
 transformers==4.36.0
-torch>=2.2.0
+# Use CPU-only PyTorch to avoid CUDA bloat on Railway (no GPU available)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.0
+torchvision==0.20.0
 faiss-cpu>=1.8.0
 pypdf==3.17.4
 python-multipart==0.0.6
