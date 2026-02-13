@@ -1,0 +1,75 @@
+================================================================================
+RAG SYSTEM EVALUATION REPORT
+================================================================================
+
+Experiment ID: 20260213_141257
+Generated: 2026-02-13T14:15:24.348801
+
+DATASET STATISTICS
+--------------------------------------------------------------------------------
+num_examples: 33
+avg_question_length: 114.81818181818181
+avg_answer_length: 96.9090909090909
+num_unique_chunks: 10
+
+RETRIEVAL PERFORMANCE
+--------------------------------------------------------------------------------
+Recall@1: 0.4848
+Precision@1: 0.4848
+NDCG@1: 0.4848
+Recall@3: 0.7576
+Precision@3: 0.2525
+NDCG@3: 0.7399
+Recall@5: 1.0000
+Precision@5: 0.2000
+NDCG@5: 0.8390
+Recall@10: 1.0000
+Precision@10: 0.1000
+NDCG@10: 0.8972
+MRR: 0.6556
+MAP: 0.8444
+
+QA PERFORMANCE
+--------------------------------------------------------------------------------
+exact_match: 0.0000
+f1: 0.0244
+bleu: 0.0000
+rouge_l: 0.0244
+
+HALLUCINATION ANALYSIS
+--------------------------------------------------------------------------------
+lexical_overlap: 0.1250
+citation_coverage: 0.0000
+hallucination_rate: 1.0000
+
+VERIFICATION PIPELINE ANALYSIS
+--------------------------------------------------------------------------------
+Verification pipeline was not available during evaluation.
+
+ABLATION STUDY RESULTS
+--------------------------------------------------------------------------------
+
+full_hybrid:
+  num_queries: 33.0000
+  avg_retrieved: 5.0000
+
+vector_only:
+  num_queries: 33.0000
+  avg_retrieved: 5.0000
+
+graph_only:
+  num_queries: 33.0000
+  avg_retrieved: 0.0000
+
+equal_weight:
+  num_queries: 33.0000
+  avg_retrieved: 5.0000
+
+vector_heavy:
+  num_queries: 33.0000
+  avg_retrieved: 5.0000
+
+graph_heavy:
+  num_queries: 33.0000
+  avg_retrieved: 5.0000
+

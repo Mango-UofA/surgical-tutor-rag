@@ -20,6 +20,13 @@ class HallucinationDetector:
         """
         self.api_key = openrouter_api_key
     
+    @staticmethod
+    def _to_string(text) -> str:
+        """Convert input to string, handling dict with 'answer' or 'text' keys"""
+        if isinstance(text, dict):
+            return text.get('answer', text.get('text', str(text)))
+        return str(text)
+    
     def extract_claims(self, text: str) -> List[str]:
         """
         Extract individual factual claims from text
@@ -31,6 +38,7 @@ class HallucinationDetector:
         Returns:
             List of claim strings
         """
+        text = self._to_string(text)
         # Split on sentence boundaries
         sentences = re.split(r'[.!?]+', text)
         claims = [s.strip() for s in sentences if s.strip() and len(s.strip()) > 10]
@@ -41,12 +49,16 @@ class HallucinationDetector:
         Simple lexical overlap between answer and context
         
         Args:
-            answer: Generated answer
+            answer: Generated answer (str or dict with 'answer' key)
             context: Retrieved context chunks
             
         Returns:
             Overlap score (0-1)
         """
+        # Convert to string
+        answer = self._to_string(answer)
+        context = self._to_string(context)
+        
         # Normalize text
         answer_tokens = set(answer.lower().split())
         context_tokens = set(context.lower().split())

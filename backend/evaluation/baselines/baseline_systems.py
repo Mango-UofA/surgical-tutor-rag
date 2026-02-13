@@ -11,7 +11,6 @@ from typing import List, Dict, Optional
 import numpy as np
 from rank_bm25 import BM25Okapi
 import aiohttp
-from modules.embedder.embedder import Embedder
 
 
 class BM25Retriever:

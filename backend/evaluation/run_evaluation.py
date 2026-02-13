@@ -29,7 +29,7 @@ try:
     RAG_IMPORTS_AVAILABLE = True
 except ImportError as e:
     RAG_IMPORTS_AVAILABLE = False
-    print(f"⚠️  RAG imports unavailable: {e}")
+    print(f"[WARNING] RAG imports unavailable: {e}")
 
 # Try importing graph components
 try:
@@ -39,6 +39,14 @@ try:
     GRAPH_AVAILABLE = True
 except ImportError:
     GRAPH_AVAILABLE = False
+
+# Try importing verification components
+try:
+    from modules.verification import VerificationPipeline
+    VERIFICATION_AVAILABLE = True
+except ImportError:
+    VERIFICATION_AVAILABLE = False
+    print("[WARNING] Verification pipeline unavailable")
 
 try:
     import pandas as pd
@@ -89,6 +97,7 @@ class ComprehensiveEvaluator:
             'retrieval_results': {},
             'qa_results': {},
             'hallucination_results': {},
+            'verification_results': {},  # NEW: Verification metrics
             'ablation_results': {},
             'baseline_comparison': {}
         }
@@ -98,6 +107,7 @@ class ComprehensiveEvaluator:
         self.faiss = None
         self.generator = None
         self.graph_retriever = None
+        self.verification_pipeline = None  # NEW: Verification pipeline
         if RAG_IMPORTS_AVAILABLE:
             self._init_rag_components()
     
@@ -106,7 +116,7 @@ class ComprehensiveEvaluator:
         import os
         return {
             'dataset': {
-                'test_file': 'test_data/test_qa_pairs.json',
+                'test_file': 'test_data/miccai_test_set_50plus.json',
                 'questions_per_chunk': 3,
                 'test_ratio': 0.2
             },
@@ -158,6 +168,19 @@ class ComprehensiveEvaluator:
                         graph_weight=0.4
                     )
                     print("Initialized graph-enhanced retrieval")
+                    
+                    # Initialize verification pipeline with graph
+                    if VERIFICATION_AVAILABLE:
+                        try:
+                            self.verification_pipeline = VerificationPipeline(
+                                neo4j_manager=neo4j,
+                                api_key=api_key,
+                                abstention_threshold=self.config.get('abstention_threshold', 0.5),
+                                enable_abstention=self.config.get('enable_abstention', True)
+                            )
+                            print("Initialized verification pipeline with hallucination taxonomy and abstention")
+                        except Exception as e:
+                            print(f"Verification pipeline unavailable: {e}")
                 except Exception as e:
                     print(f"Graph features unavailable: {e}")
                     
@@ -172,27 +195,31 @@ class ComprehensiveEvaluator:
         print("="*80)
         
         # 1. Load or generate test dataset
-        print("\n[1/6] Loading test dataset...")
+        print("\n[1/7] Loading test dataset...")
         test_data = await self._load_test_dataset()
         
         # 2. Evaluate retrieval performance
-        print("\n[2/6] Evaluating retrieval performance...")
+        print("\n[2/7] Evaluating retrieval performance...")
         self.results['retrieval_results'] = self._evaluate_retrieval(test_data)
         
         # 3. Evaluate QA performance
-        print("\n[3/6] Evaluating QA performance...")
+        print("\n[3/7] Evaluating QA performance...")
         self.results['qa_results'] = self._evaluate_qa(test_data)
         
         # 4. Evaluate hallucination/faithfulness
-        print("\n[4/6] Evaluating hallucination rates...")
+        print("\n[4/7] Evaluating hallucination rates...")
         self.results['hallucination_results'] = self._evaluate_hallucination(test_data)
         
-        # 5. Run ablation study
-        print("\n[5/6] Running ablation study...")
+        # 5. Evaluate verification pipeline (NEW)
+        print("\n[5/7] Evaluating verification pipeline...")
+        self.results['verification_results'] = self._evaluate_verification(test_data)
+        
+        # 6. Run ablation study
+        print("\n[6/7] Running ablation study...")
         self.results['ablation_results'] = self._run_ablation_study(test_data)
         
-        # 6. Compare with baselines
-        print("\n[6/6] Comparing with baseline systems...")
+        # 7. Compare with baselines
+        print("\n[7/7] Comparing with baseline systems...")
         self.results['baseline_comparison'] = await self._compare_baselines(test_data)
         
         # Generate report
@@ -266,7 +293,7 @@ class ComprehensiveEvaluator:
         queries = [
             {
                 'query': qa['question'],
-                'relevant_doc_ids': [qa['chunk_id']]
+                'relevant_doc_ids': [str(qa['chunk_id'])]  # Convert to string to match retrieved IDs
             }
             for qa in test_data
         ]
@@ -288,8 +315,11 @@ class ComprehensiveEvaluator:
                 chunk_ids = []
                 for ctx in contexts:
                     meta = ctx.get('metadata', {})
-                    chunk_id = meta.get('chunk_id') or meta.get('id', None)
-                    if chunk_id:
+                    # Check multiple possible keys
+                    chunk_id = (meta.get('chunk_id') or 
+                               meta.get('chunk_index') or 
+                               meta.get('id', None))
+                    if chunk_id is not None:
                         chunk_ids.append(str(chunk_id))
                 
                 return chunk_ids
@@ -338,6 +368,97 @@ class ComprehensiveEvaluator:
         
         # Evaluate
         results = evaluate_hallucination(predictions)
+        
+        return results
+    
+    def _evaluate_verification(self, test_data: List[Dict]) -> Dict:
+        """
+        Evaluate verification pipeline:
+        - Abstention rate
+        - Hallucination classification distribution
+        - Safety scores
+        - Uncertainty metrics
+        """
+        if not self.verification_pipeline:
+            print("[WARNING] Verification pipeline not initialized. Skipping verification evaluation.")
+            return {
+                'abstention_rate': 0.0,
+                'hallucination_distribution': {},
+                'avg_safety_score': 0.0,
+                'avg_uncertainty': 0.0,
+                'status': 'skipped'
+            }
+        
+        verification_reports = []
+        abstention_count = 0
+        hallucination_counts = {}
+        severity_counts = {'critical': 0, 'high': 0, 'medium': 0, 'low': 0}
+        safety_scores = []
+        uncertainties = []
+        
+        print(f"Running verification on {len(test_data)} test examples...")
+        
+        for i, qa in enumerate(test_data):
+            try:
+                # Generate answer
+                answer, context_chunks = self._generate_answer_with_context(qa['question'])
+                
+                # Run verification
+                report = self.verification_pipeline.verify_answer(qa['question'], answer)
+                verification_reports.append(report)
+                
+                # Count abstentions
+                if report.get('abstention_decision', {}).get('should_abstain', False):
+                    abstention_count += 1
+                
+                # Collect hallucination statistics
+                hall_analysis = report.get('hallucination_analysis', {})
+                for hallucination in hall_analysis.get('hallucinations', []):
+                    h_type = hallucination.get('type', 'unknown')
+                    hallucination_counts[h_type] = hallucination_counts.get(h_type, 0) + 1
+                    
+                    severity = hallucination.get('severity', 'unknown')
+                    if severity in severity_counts:
+                        severity_counts[severity] += 1
+                
+                # Collect safety scores
+                safety_score = hall_analysis.get('safety_score', 1.0)
+                safety_scores.append(safety_score)
+                
+                # Collect uncertainty
+                uncertainty = report.get('uncertainty_analysis', {}).get('overall_uncertainty', 0.0)
+                uncertainties.append(uncertainty)
+                
+                if (i + 1) % 5 == 0:
+                    print(f"  Processed {i + 1}/{len(test_data)} examples...")
+                    
+            except Exception as e:
+                print(f"  Error verifying question {i+1}: {e}")
+                continue
+        
+        # Compile results
+        abstention_rate = abstention_count / len(test_data) if test_data else 0.0
+        avg_safety_score = sum(safety_scores) / len(safety_scores) if safety_scores else 0.0
+        avg_uncertainty = sum(uncertainties) / len(uncertainties) if uncertainties else 0.0
+        
+        results = {
+            'abstention_rate': abstention_rate,
+            'abstention_count': abstention_count,
+            'total_examples': len(test_data),
+            'hallucination_distribution': hallucination_counts,
+            'severity_distribution': severity_counts,
+            'avg_safety_score': avg_safety_score,
+            'avg_uncertainty': avg_uncertainty,
+            'avg_certainty': 1.0 - avg_uncertainty,
+            'verification_reports': verification_reports[:5],  # Save first 5 for inspection
+            'status': 'completed'
+        }
+        
+        print(f"\n✅ Verification evaluation complete:")
+        print(f"   Abstention rate: {abstention_rate*100:.1f}%")
+        print(f"   Avg safety score: {avg_safety_score:.2f}/1.00")
+        print(f"   Avg certainty: {(1-avg_uncertainty)*100:.0f}%")
+        print(f"   Total hallucinations detected: {sum(hallucination_counts.values())}")
         
         return results
     
@@ -395,7 +516,7 @@ class ComprehensiveEvaluator:
             answer = self.generator.generate_answer(question, contexts, level="Advanced")
             return answer
         except Exception as e:
-            print(f"⚠️  Error generating answer: {e}")
+            print(f"[WARNING] Error generating answer: {e}")
             return f"Error: {str(e)}"
     
     def _generate_answer_with_context(self, question: str) -> tuple:
@@ -416,7 +537,7 @@ class ComprehensiveEvaluator:
             answer = self.generator.generate_answer(question, contexts, level="Advanced")
             return answer, context_texts
         except Exception as e:
-            print(f"⚠️  Error generating answer with context: {e}")
+            print(f"[WARNING] Error generating answer with context: {e}")
             return f"Error: {str(e)}", []
     
     def _generate_report(self):
@@ -457,6 +578,35 @@ class ComprehensiveEvaluator:
             f.write("-"*80 + "\n")
             for metric, score in self.results['hallucination_results'].items():
                 f.write(f"{metric}: {score:.4f}\n")
+            f.write("\n")
+            
+            # Verification results (NEW)
+            f.write("VERIFICATION PIPELINE ANALYSIS\n")
+            f.write("-"*80 + "\n")
+            ver_results = self.results['verification_results']
+            if ver_results.get('status') == 'skipped':
+                f.write("Verification pipeline was not available during evaluation.\n")
+            else:
+                f.write(f"Abstention Rate: {ver_results.get('abstention_rate', 0)*100:.2f}%\n")
+                f.write(f"Abstention Count: {ver_results.get('abstention_count', 0)}/{ver_results.get('total_examples', 0)}\n")
+                f.write(f"Average Safety Score: {ver_results.get('avg_safety_score', 0):.2f}/1.00\n")
+                f.write(f"Average Certainty: {ver_results.get('avg_certainty', 0)*100:.1f}%\n")
+                f.write(f"Average Uncertainty: {ver_results.get('avg_uncertainty', 0):.3f}\n\n")
+                
+                f.write("Hallucination Type Distribution:\n")
+                hall_dist = ver_results.get('hallucination_distribution', {})
+                if hall_dist:
+                    for h_type, count in sorted(hall_dist.items(), key=lambda x: x[1], reverse=True):
+                        f.write(f"  {h_type}: {count}\n")
+                else:
+                    f.write("  No hallucinations detected\n")
+                f.write("\n")
+                
+                f.write("Severity Distribution:\n")
+                sev_dist = ver_results.get('severity_distribution', {})
+                for severity in ['critical', 'high', 'medium', 'low']:
+                    count = sev_dist.get(severity, 0)
+                    f.write(f"  {severity.capitalize()}: {count}\n")
             f.write("\n")
             
             # Ablation results
@@ -597,6 +747,34 @@ class ComprehensiveEvaluator:
             f.write("\\hline\n")
             f.write("\\end{tabular}\n")
             f.write("\\end{table}\n\n")
+            
+            # Verification pipeline table (NEW)
+            ver_results = self.results.get('verification_results', {})
+            if ver_results and ver_results.get('status') != 'skipped':
+                f.write("\\begin{table}[h]\n")
+                f.write("\\centering\n")
+                f.write("\\caption{Verification Pipeline Metrics}\n")
+                f.write("\\begin{tabular}{lr}\n")
+                f.write("\\hline\n")
+                f.write("Metric & Value \\\\\n")
+                f.write("\\hline\n")
+                
+                f.write(f"Abstention Rate & {ver_results.get('abstention_rate', 0)*100:.2f}\\% \\\\\n")
+                f.write(f"Avg Safety Score & {ver_results.get('avg_safety_score', 0):.3f} \\\\\n")
+                f.write(f"Avg Certainty & {ver_results.get('avg_certainty', 0)*100:.1f}\\% \\\\\n")
+                
+                # Severity distribution
+                sev_dist = ver_results.get('severity_distribution', {})
+                total_hallucinations = sum(sev_dist.values())
+                f.write(f"Total Hallucinations & {total_hallucinations} \\\\\n")
+                if sev_dist.get('critical', 0) > 0:
+                    f.write(f"Critical Errors & {sev_dist['critical']} \\\\\n")
+                if sev_dist.get('high', 0) > 0:
+                    f.write(f"High Severity & {sev_dist['high']} \\\\\n")
+                
+                f.write("\\hline\n")
+                f.write("\\end{tabular}\n")
+                f.write("\\end{table}\n\n")
         
         print(f"LaTeX tables saved: {latex_path}")
 

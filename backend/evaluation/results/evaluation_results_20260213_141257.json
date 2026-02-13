@@ -1,0 +1,122 @@
+{
+  "experiment_id": "20260213_141257",
+  "config": {
+    "dataset": {
+      "test_file": "test_data/validated_50plus_test_set.json",
+      "questions_per_chunk": 3,
+      "test_ratio": 0.2
+    },
+    "evaluation": {
+      "k_values": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "include_bleu": true,
+      "include_rouge": true,
+      "use_nli_hallucination": false
+    },
+    "faiss_index_path": "../faiss_index.index",
+    "bioclinicalbert_model": "emilyalsentzer/Bio_ClinicalBERT",
+    "scispacy_model": "en_core_sci_md",
+    "neo4j": {
+      "uri": "neo4j+s://c64a73b7.databases.neo4j.io",
+      "user": "neo4j",
+      "password": "LqTThNhiqU9ejRNg8DwYEBjBjYcpVQCZckiX3YLU4Ag"
+    },
+    "api_key": "${OPENROUTER_API_KEY}",
+    "embeddings": {
+      "biomedical_model": "microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext",
+      "general_model": "sentence-transformers/all-MiniLM-L6-v2"
+    },
+    "ablation_configs": [
+      "full_hybrid",
+      "vector_only",
+      "graph_only",
+      "equal_weight",
+      "vector_heavy",
+      "graph_heavy"
+    ],
+    "baselines": [
+      "bm25",
+      "dense_retrieval",
+      "openai_embeddings",
+      "vanilla_gpt"
+    ]
+  },
+  "dataset_stats": {
+    "num_examples": 33,
+    "avg_question_length": 114.81818181818181,
+    "avg_answer_length": 96.9090909090909,
+    "num_unique_chunks": 10
+  },
+  "retrieval_results": {
+    "Recall@1": 0.48484848484848486,
+    "Precision@1": 0.48484848484848486,
+    "NDCG@1": 0.48484848484848486,
+    "Recall@3": 0.7575757575757576,
+    "Precision@3": 0.25252525252525254,
+    "NDCG@3": 0.7398941901515214,
+    "Recall@5": 1.0,
+    "Precision@5": 0.2,
+    "NDCG@5": 0.8389886586736952,
+    "Recall@10": 1.0,
+    "Precision@10": 0.1,
+    "NDCG@10": 0.89721513686834,
+    "MRR": 0.6555555555555554,
+    "MAP": 0.8444444444444443
+  },
+  "qa_results": {
+    "exact_match": 0.0,
+    "f1": 0.024442179902326937,
+    "bleu": 0.0,
+    "rouge_l": 0.024442179902326937
+  },
+  "hallucination_results": {
+    "lexical_overlap": 0.125,
+    "citation_coverage": 0.0,
+    "hallucination_rate": 1.0
+  },
+  "verification_results": {
+    "abstention_rate": 0.0,
+    "hallucination_distribution": {},
+    "avg_safety_score": 0.0,
+    "avg_uncertainty": 0.0,
+    "status": "skipped"
+  },
+  "ablation_results": {
+    "full_hybrid": {
+      "num_queries": 33,
+      "avg_retrieved": 5.0
+    },
+    "vector_only": {
+      "num_queries": 33,
+      "avg_retrieved": 5.0
+    },
+    "graph_only": {
+      "num_queries": 33,
+      "avg_retrieved": 0.0
+    },
+    "equal_weight": {
+      "num_queries": 33,
+      "avg_retrieved": 5.0
+    },
+    "vector_heavy": {
+      "num_queries": 33,
+      "avg_retrieved": 5.0
+    },
+    "graph_heavy": {
+      "num_queries": 33,
+      "avg_retrieved": 5.0
+    }
+  },
+  "baseline_comparison": {
+    "BM25": {
+      "recall@5": 0.0
+    },
+    "Dense Retrieval": {
+      "recall@5": 0.0
+    }
+  }
+}

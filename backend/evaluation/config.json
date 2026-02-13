@@ -1,6 +1,6 @@
 {
   "dataset": {
-    "test_file": "test_data/test_qa_pairs_from_faiss.json",
+    "test_file": "test_data/validated_50plus_test_set.json",
     "questions_per_chunk": 3,
     "test_ratio": 0.2
   },
@@ -14,9 +14,9 @@
   "bioclinicalbert_model": "emilyalsentzer/Bio_ClinicalBERT",
   "scispacy_model": "en_core_sci_md",
   "neo4j": {
-    "uri": "bolt://localhost:7687",
+    "uri": "neo4j+s://c64a73b7.databases.neo4j.io",
     "user": "neo4j",
-    "password": "surgical123"
+    "password": "LqTThNhiqU9ejRNg8DwYEBjBjYcpVQCZckiX3YLU4Ag"
   },
   "api_key": "${OPENROUTER_API_KEY}",
   "embeddings": {

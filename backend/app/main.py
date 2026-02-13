@@ -18,6 +18,9 @@ from modules.embedder.embedder import BioClinicalEmbedder
 from modules.retriever.faiss_manager import FaissManager
 from modules.generator.generator import Generator
 from modules.quiz_generator.quiz_generator import QuizGenerator
+from modules.query_processing.query_decomposer import QueryDecomposer
+from modules.query_processing.multi_step_retriever import MultiStepRetriever
+from modules.prompt_engineering.surgical_cot import SurgicalCoTPrompter
 
 # Graph-enhanced modules (optional - gracefully handle if dependencies missing)
 try:
@@ -25,6 +28,7 @@ try:
     from modules.graph.entity_extractor import MedicalEntityExtractor
     from modules.graph.graph_retriever import GraphEnhancedRetriever
     from modules.graph.graph_ingestor import GraphEnhancedIngestor
+    from modules.verification.verification_pipeline import VerificationPipeline
     GRAPH_IMPORTS_AVAILABLE = True
 except ImportError as e:
     print(f"⚠️  Graph features unavailable (missing dependencies): {e}")
@@ -33,6 +37,7 @@ except ImportError as e:
     MedicalEntityExtractor = None
     GraphEnhancedRetriever = None
     GraphEnhancedIngestor = None
+    VerificationPipeline = None
     GRAPH_IMPORTS_AVAILABLE = False
 
 # Multimodal modules
@@ -72,12 +77,16 @@ _embedder: Optional[BioClinicalEmbedder] = None
 _faiss: Optional[FaissManager] = None
 _gen: Optional[Generator] = None
 _quiz: Optional[QuizGenerator] = None
+_surgical_cot_prompter = None
 
 # Graph-enhanced components
 _neo4j = None
 _entity_extractor = None
 _graph_retriever = None
 _graph_ingestor = None
+_verification_pipeline = None
+_query_decomposer = None
+_multi_step_retriever = None
 _graph_enabled: bool = False
 
 # Multimodal components
@@ -109,11 +118,25 @@ def get_faiss():
             pass
     return _faiss
 
+def get_surgical_cot_prompter():
+    """Get surgical Chain-of-Thought prompter"""
+    global _surgical_cot_prompter
+    if _surgical_cot_prompter is None:
+        _surgical_cot_prompter = SurgicalCoTPrompter()
+        print("✅ Surgical CoT prompter initialized")
+    return _surgical_cot_prompter
+
 
 def get_generator():
     global _gen
     if _gen is None:
-        _gen = Generator()
+        # Initialize with all enhancements
+        verification_pipeline = get_verification_pipeline()
+        surgical_cot = get_surgical_cot_prompter()
+        _gen = Generator(
+            verification_pipeline=verification_pipeline,
+            surgical_cot_prompter=surgical_cot
+        )
     return _gen
 
 
@@ -194,6 +217,59 @@ def get_graph_ingestor():
             build_graph=(neo4j is not None and extractor is not None)
         )
     return _graph_ingestor
+
+
+def get_verification_pipeline():
+    """Get verification pipeline for answer verification"""
+    global _verification_pipeline
+    
+    if not GRAPH_IMPORTS_AVAILABLE or not VerificationPipeline:
+        return None
+    
+    if _verification_pipeline is None:
+        neo4j = get_neo4j()
+        if neo4j:
+            try:
+                _verification_pipeline = VerificationPipeline(neo4j)
+                print("✅ Verification pipeline initialized")
+            except Exception as e:
+                print(f"⚠️  Verification pipeline initialization failed: {e}")
+
+
+def get_query_decomposer():
+    """Get query decomposer for multi-step retrieval"""
+    global _query_decomposer
+    if _query_decomposer is None:
+        _query_decomposer = QueryDecomposer()
+        print("✅ Query decomposer initialized")
+    return _query_decomposer
+
+
+def get_multi_step_retriever():
+    """Get multi-step retriever with query decomposition"""
+    global _multi_step_retriever
+    
+    if _multi_step_retriever is None:
+        # Use graph retriever if available, otherwise FAISS
+        if is_graph_enabled():
+            base_retriever = get_graph_retriever()
+            use_decomp = True
+        else:
+            base_retriever = get_faiss()
+            use_decomp = True
+        
+        if base_retriever:
+            decomposer = get_query_decomposer()
+            _multi_step_retriever = MultiStepRetriever(
+                base_retriever, 
+                decomposer, 
+                use_decomposition=use_decomp
+            )
+            print("✅ Multi-step retriever initialized")
+    
+    return _multi_step_retriever
+    
+    return _verification_pipeline
 
 
 def is_graph_enabled():
@@ -280,55 +356,78 @@ async def upload_pdf(file: UploadFile = File(...), title: str = Form(None)):
             print(f"📝 Extracted text length: {len(text)} characters")
             
             print(f"✂️ Chunking text...")
-            chunks = simple_chunk_text(text, approx_tokens=CHUNK_TOKEN_TARGET)
-            if not chunks:
+            chunk_texts = simple_chunk_text(text, approx_tokens=CHUNK_TOKEN_TARGET)
+            if not chunk_texts:
                 raise HTTPException(status_code=400, detail="No chunks created from PDF")
-            print(f"✂️ Created {len(chunks)} chunks")
+            print(f"✂️ Created {len(chunk_texts)} chunks")
+            
+            # Convert text chunks to metadata format for FAISS
+            chunks = []
+            for i, chunk_text in enumerate(chunk_texts):
+                chunks.append({
+                    "text": chunk_text,
+                    "source": file.filename,
+                    "title": title or file.filename,
+                    "chunk_index": i
+                })
             
             print(f"🧠 Initializing embedder...")
             embedder = get_embedder()
-            print(f"🧠 Generating embeddings (this may take 1-2 minutes on first run)...")
-            embeddings = embedder.embed_texts(chunks)
+            print(f"🧠 Generating embeddings for {len(chunks)} chunks...")
             
-            if not embeddings or len(embeddings) == 0:
-                raise HTTPException(status_code=500, detail="Failed to generate embeddings")
-            print(f"✨ Generated {len(embeddings)} embeddings")
+            try:
+                # Extract text from chunks for embedding
+                texts_to_embed = [chunk["text"] for chunk in chunks]
+                
+                embeddings = embedder.embed_texts(texts_to_embed)
+                print(f"✅ Embeddings generated: {len(embeddings)} vectors")
+                
+            except Exception as e:
+                print(f"❌ Error generating embeddings: {e}")
+                import traceback
+                traceback.print_exc()
+                raise HTTPException(status_code=500, detail=f"Embedding generation failed: {str(e)}")
             
-            print(f"💾 Adding to FAISS index...")
+            print(f"💾 Adding to vector index...")
             faiss = get_faiss()
-            print(f"📊 FAISS index before adding: {faiss.index.ntotal} vectors")
-            metadatas = [{"source": file.filename, "title": title or file.filename, "text": chunk} for chunk in chunks]
-            faiss.add(embeddings, metadatas)
-            
-            # Verify the vectors were added
-            total_vectors = faiss.index.ntotal
-            print(f"✅ FAISS index after adding: {total_vectors} vectors")
-            print(f"💾 Index saved to: {faiss.index_path}")
+            faiss.add(embeddings, chunks)
+            faiss.save(FAISS_INDEX_PATH)
+            print(f"✅ Indexed successfully")
             
             return {
                 "ingested_chunks": len(chunks),
-                "total_vectors_in_index": total_vectors,
+                "total_vectors_in_index": faiss.index.ntotal,
                 "graph_enabled": False,
                 "message": f"Successfully indexed {len(chunks)} chunks from {file.filename} (vector-only mode)"
             }
+    
     except HTTPException:
+        # Re-raise HTTP exceptions as-is
         raise
-    except Exception as e:
-        print(f"❌ ERROR during upload: {type(e).__name__}: {str(e)}")
+    except Exception as ex:
+        print(f"❌ Unexpected error in upload_pdf: {ex}")
         import traceback
         traceback.print_exc()
-        raise HTTPException(status_code=500, detail=f"Upload failed: {type(e).__name__}: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(ex))
 
 
 @app.post("/chat")
-async def chat(query: str = Form(...), level: str = Form("Novice"), use_graph: bool = Form(True)):
+async def chat(
+    query: str = Form(...),
+    level: str = Form("Novice"),
+    use_graph: bool = Form(True),
+    use_multistep: bool = Form(True),
+    use_surgical_cot: bool = Form(False)
+):
     """
-    Chat endpoint with optional graph-enhanced retrieval.
+    Chat endpoint with all MICCAI enhancements.
     
     Args:
         query: User question
         level: Difficulty level (Novice/Intermediate/Advanced)
         use_graph: Whether to use graph-enhanced retrieval (if available)
+        use_multistep: Whether to use multi-step query decomposition
+        use_surgical_cot: Whether to use surgical Chain-of-Thought prompting
     """
     faiss = get_faiss()
     embedder = get_embedder()
@@ -338,28 +437,65 @@ async def chat(query: str = Form(...), level: str = Form("Novice"), use_graph: b
         return {
             "answer": "⚠️ No documents have been uploaded yet. Please upload a PDF document first to enable the chat feature.",
             "contexts": [],
-            "graph_used": False
+            "graph_used": False,
+            "verification": None,
+            "multistep_used": False,
+            "surgical_cot_used": False
         }
     
     contexts = []
     graph_used = False
+    multistep_used = False
     
-    # Try graph-enhanced retrieval if enabled and requested
-    if use_graph and is_graph_enabled():
+    # Try multi-step retrieval if enabled
+    if use_multistep:
         try:
-            graph_retriever = get_graph_retriever()
-            if graph_retriever:
-                contexts = graph_retriever.retrieve(query, top_k=5, use_graph=True, expand_entities=True)
-                graph_used = True
-                print(f"✅ Used graph-enhanced retrieval")
+            multi_retriever = get_multi_step_retriever()
+            if multi_retriever:
+                # Determine if using graph or FAISS
+                if use_graph and is_graph_enabled():
+                    # Multi-step with graph
+                    contexts = multi_retriever.retrieve(
+                        query, 
+                        top_k=5, 
+                        top_k_per_subquery=3,
+                        use_graph=True, 
+                        expand_entities=True
+                    )
+                    graph_used = True
+                else:
+                    # Multi-step with FAISS only
+                    contexts = multi_retriever.retrieve(
+                        query, 
+                        top_k=5, 
+                        top_k_per_subquery=3,
+                        embedder=embedder
+                    )
+                
+                multistep_used = True
+                print(f"✅ Used multi-step retrieval (graph: {graph_used})")
         except Exception as e:
-            print(f"⚠️  Graph retrieval failed, falling back to vector-only: {e}")
-            graph_used = False
+            print(f"⚠️  Multi-step retrieval failed: {e}")
+            multistep_used = False
     
-    # Fall back to standard vector retrieval if graph not used
-    if not graph_used:
-        q_emb = embedder.embed_texts([query])[0]
-        contexts = faiss.query(q_emb, top_k=5)
+    # Fallback to standard retrieval if multi-step not used
+    if not multistep_used:
+        # Try graph-enhanced retrieval if enabled and requested
+        if use_graph and is_graph_enabled():
+            try:
+                graph_retriever = get_graph_retriever()
+                if graph_retriever:
+                    contexts = graph_retriever.retrieve(query, top_k=5, use_graph=True, expand_entities=True)
+                    graph_used = True
+                    print(f"✅ Used graph-enhanced retrieval")
+            except Exception as e:
+                print(f"⚠️  Graph retrieval failed, falling back to vector-only: {e}")
+                graph_used = False
+        
+        # Fall back to standard vector retrieval if graph not used
+        if not graph_used:
+            q_emb = embedder.embed_texts([query])[0]
+            contexts = faiss.query(q_emb, top_k=5)
     
     # Filter out invalid contexts (those with -inf scores)
     valid_contexts = [c for c in contexts if c.get('score', 0) > -1e30]
@@ -368,15 +504,39 @@ async def chat(query: str = Form(...), level: str = Form("Novice"), use_graph: b
         return {
             "answer": "⚠️ Could not find relevant information. Please try uploading more documents or rephrasing your question.",
             "contexts": [],
-            "graph_used": graph_used
+            "graph_used": graph_used,
+            "verification": None,
+            "multistep_used": multistep_used,
+            "surgical_cot_used": False
         }
     
+    # Generate answer with all enhancements
     gen = get_generator()
-    answer = gen.generate_answer(query, valid_contexts, level=level)
+    result = gen.generate_answer(
+        query, 
+        valid_contexts, 
+        level=level, 
+        enable_verification=is_graph_enabled(),
+        use_surgical_cot=use_surgical_cot
+    )
+    
+    # Handle both old string format and new dict format for backward compatibility
+    if isinstance(result, str):
+        answer = result
+        verification = None
+        surgical_cot_used = False
+    else:
+        answer = result.get("answer", "")
+        verification = result.get("verification")
+        surgical_cot_used = result.get("used_surgical_cot", False)
+    
     return {
         "answer": answer, 
         "contexts": valid_contexts,
-        "graph_used": graph_used
+        "graph_used": graph_used,
+        "verification": verification,
+        "multistep_used": multistep_used,
+        "surgical_cot_used": surgical_cot_used
     }
 
 

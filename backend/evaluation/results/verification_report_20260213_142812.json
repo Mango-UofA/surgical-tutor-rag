@@ -1,0 +1,2148 @@
+{
+  "metadata": {
+    "generated_at": "2026-02-13T14:28:12.445099",
+    "test_set_size": 33,
+    "script_version": "2.0"
+  },
+  "metrics": {
+    "avg_verification_score": 0.8484848484848485,
+    "avg_safety_score": 0.0,
+    "avg_certainty": 0.0,
+    "abstention_rate": 1.0,
+    "abstention_count": "33/33",
+    "total_hallucinations": 0,
+    "high_confidence_count": 28,
+    "low_confidence_count": 5,
+    "high_confidence_verification": 1.0,
+    "low_confidence_verification": 0.0
+  },
+  "results": [
+    {
+      "question": "What was the cost difference between robotic and laparoscopic fundoplication in children according to Anderberg et al.?",
+      "expected_answer": "Robotic fundoplication cost 9,582 Euros, while laparoscopic fundoplication cost 8,982 Euros, making robotic fundoplication 600 Euros more expensive.",
+      "generated_answer": "The context does not provide specific information regarding the cost difference between robotic and laparoscopic fundoplication in children according to Anderberg et al. Therefore, I cannot provide an answer based on the given excerpts. Further search in the original document or related literature would be necessary to answer this question.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What is the impact of further research on low-quality evidence with strong recommendation?",
+      "expected_answer": "Further research is likely to have an important impact on our confidence in the estimate of effect and is likely to change the estimate.",
+      "generated_answer": "The impact of further research on low-quality evidence with strong recommendations is significant, as it can potentially change the level of certainty and the direction of recommendations. In the context provided, the evidence is described as having low or very low certainty, which affects decision-making (see Context: \"...the certainty in these effects was rated as low or very low owing to the risk of bias and imprecision of the estimates...\"). Conducting further research could increase the precision and quality of estimates, and potentially reduce the risk of bias by using more robust methodologies and larger sample sizes. This could lead to either the reinforcement of current recommendations or a reevaluation and change in direction if new data suggests different outcomes or effects. Therefore, additional research is likely to provide a clearer understanding and could shift current practices by either strengthening the existing guidelines or redirecting them based on improved evidence quality ([see Context](#context)).",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What tool was used to assess the risk of bias in randomized control trials?",
+      "expected_answer": "The Cochrane Risk of Bias tool was used to assess the risk of bias for included randomized control trials.",
+      "generated_answer": "The Cochrane Risk of Bias 2.0 tool was used to assess the risk of bias in randomized control trials (RCTs) (see context: \"Risk of Bias in Individual Studies...using either the Cochrane Risk of Bias 2.0 tool [17] (for RCTs)\" and \"Risk of bias in individual studies The Cochrane Risk of Bias tool was used to assess the risk of bias for included randomized control trials\").",
+      "verification": {
+        "verification_score": 0.0,
+        "confidence_level": "low",
+        "total_claims": 1,
+        "verified_claims": 0,
+        "unverified_claims": 1,
+        "category_scores": {
+          "instruments": 0.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [
+          {
+            "type": "instrument",
+            "claim": {
+              "step": "assess the risk of bias in randomized control trials",
+              "instrument": "Cochrane Risk of Bias 2.0 tool",
+              "usage": "used to assess the risk of bias"
+            },
+            "reason": "No graph relationship found"
+          }
+        ],
+        "extracted_claims": {
+          "instrument_claims": [
+            {
+              "step": "assess the risk of bias in randomized control trials",
+              "instrument": "Cochrane Risk of Bias 2.0 tool",
+              "usage": "used to assess the risk of bias"
+            }
+          ],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 1,
+          "classifications": [
+            {
+              "hallucination_type": "instrument_incorrect",
+              "category": "instrument",
+              "severity": "high",
+              "description": "Wrong instrument specified for surgical step",
+              "unverified_claim": {
+                "type": "instrument",
+                "claim": {
+                  "step": "assess the risk of bias in randomized control trials",
+                  "instrument": "Cochrane Risk of Bias 2.0 tool",
+                  "usage": "used to assess the risk of bias"
+                },
+                "reason": "No graph relationship found"
+              },
+              "confidence": 0.95
+            }
+          ],
+          "category_distribution": {
+            "instrument": 1
+          },
+          "severity_distribution": {
+            "critical": 0,
+            "high": 1,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [
+            "Expand instrument-procedure mappings in knowledge graph"
+          ],
+          "safety_score": 0.5
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Insufficient verification confidence (0%). Only 0/1 claims verified in knowledge graph."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.2,
+          "overall_uncertainty": 0.8,
+          "components": {
+            "verification_certainty": 0.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very Low Confidence - Abstain"
+        },
+        "warning_message": "⚠️ CAUTION: Insufficient evidence in knowledge base. Consult supervisor or primary sources before use."
+      }
+    },
+    {
+      "question": "What are the four stages of the GROW model as described by Singh et al.?",
+      "expected_answer": "The four stages of the GROW model are Goals, Reality, Options, and Wrap-up.",
+      "generated_answer": "The GROW model, as described by Singh et al., consists of four stages: Goal, Reality, Options (or Obstacles), and Will (or Way forward). The context provided does not include a specific citation from Singh et al. referring to the GROW model, so a direct reference to Singh et al. from the text is not possible. However, the GROW model is well-established in coaching literature and typically includes these four stages as part of the process.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What was the perioperative cost in US dollars for robotic fundoplication according to Owen 2014?",
+      "expected_answer": "The perioperative cost for robotic fundoplication according to Owen 2014 was 10,644 US dollars.",
+      "generated_answer": "The perioperative cost for robotic fundoplication according to Owen 2014 was 9,582 Euros. This information can be referenced from the context provided, although it does not provide an exact conversion to US dollars. To convert this to US dollars, one would need to know the exchange rate at the time of the study. However, the context does not specify the conversion or exchange rate ([Context Section on fundoplication in children for wrap failure, dysphagia, and cost](Context)).",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What was the overall complication rate for laparoscopic appendectomy (LA) mentioned in the text?",
+      "expected_answer": "The overall complication rate for laparoscopic appendectomy (LA) mentioned in the text is 8.7%.",
+      "generated_answer": "The text does not provide specific information about the overall complication rate for laparoscopic appendectomy (LA). The context primarily focuses on fundoplication and outcomes related to GERD interventions, such as fundoplication efficacy, dysphagia, quality of life, and various comparisons within surgical procedures for hiatal hernia and GERD, but does not mention laparoscopic appendectomy (LA) or its complication rates.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "Which department is associated with the University of California San Diego School of Medicine?",
+      "expected_answer": "The Division of Pediatric Surgery, Department of Surgery, is associated with the University of California San Diego School of Medicine.",
+      "generated_answer": "The context provided does not contain any specific information about the department associated with the University of California San Diego School of Medicine. Therefore, I cannot provide an answer based on the given text.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What was the short-term mortality rate after cholecystostomy tube placement as reported in the 2007 systematic review?",
+      "expected_answer": "The short-term mortality rate after cholecystostomy tube placement, either 30-day or in-hospital, was reported as 15.4% in the 2007 systematic review.",
+      "generated_answer": "The context provided does not contain information about the short-term mortality rate after cholecystostomy tube placement as reported in a 2007 systematic review. The excerpts focus on studies related to fundoplication, Roux-en-Y versus redo repair, and related topics about gastroesophageal reflux disease and hernia repairs. To find the specific information on short-term mortality rates after cholecystostomy tube placement from a 2007 systematic review, one would need to refer to the specific review document or additional literature on the topic.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What age range was defined for children and adolescents in the review?",
+      "expected_answer": "Children and adolescents were defined as those aged between 1 and 16 years old.",
+      "generated_answer": "The age range for children and adolescents in the review was defined as 0 to 18 years. This is mentioned explicitly in context segment 9/22.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What surgical approach did Walz MK and colleagues use in 2004 for adrenalectomy in primary adrenal neoplasias, and how many procedures were performed?",
+      "expected_answer": "Walz MK and colleagues used the posterior retroperitoneoscopic approach for adrenalectomy in primary adrenal neoplasias, performing 325 consecutive procedures.",
+      "generated_answer": "Walz MK and colleagues used the posterior retroperitoneoscopic approach for adrenalectomy in primary adrenal neoplasias, performing a total of 560 procedures in 520 patients.",
+      "verification": {
+        "verification_score": 0.0,
+        "confidence_level": "low",
+        "total_claims": 1,
+        "verified_claims": 0,
+        "unverified_claims": 1,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 0.0,
+          "complications": 1.0
+        },
+        "unverified_details": [
+          {
+            "type": "anatomy",
+            "claim": {
+              "procedure": "posterior retroperitoneoscopic adrenalectomy",
+              "anatomical_structure": "adrenal gland",
+              "relationship": "TARGETS"
+            },
+            "reason": "Anatomical structure not found in graph"
+          }
+        ],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [
+            {
+              "procedure": "posterior retroperitoneoscopic adrenalectomy",
+              "anatomical_structure": "adrenal gland",
+              "relationship": "TARGETS"
+            }
+          ],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 1,
+          "classifications": [
+            {
+              "hallucination_type": "anatomical_structure_error",
+              "category": "anatomical",
+              "severity": "critical",
+              "description": "Incorrect anatomical structure mentioned",
+              "unverified_claim": {
+                "type": "anatomy",
+                "claim": {
+                  "procedure": "posterior retroperitoneoscopic adrenalectomy",
+                  "anatomical_structure": "adrenal gland",
+                  "relationship": "TARGETS"
+                },
+                "reason": "Anatomical structure not found in graph"
+              },
+              "confidence": 0.95
+            }
+          ],
+          "category_distribution": {
+            "anatomical": 1
+          },
+          "severity_distribution": {
+            "critical": 1,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 1,
+          "recommendations": [
+            "⚠️ CRITICAL: Manual review required before clinical use",
+            "Enhance anatomy knowledge graph with more detailed relationships"
+          ],
+          "safety_score": 0.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Insufficient verification confidence (0%). Only 0/1 claims verified in knowledge graph."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.2,
+          "overall_uncertainty": 0.8,
+          "components": {
+            "verification_certainty": 0.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very Low Confidence - Abstain"
+        },
+        "warning_message": "⚠️ CAUTION: Insufficient evidence in knowledge base. Consult supervisor or primary sources before use."
+      }
+    },
+    {
+      "question": "How many articles were reviewed in detail to define the statements and recommendations in the 2020 guidelines?",
+      "expected_answer": "In total, 157 articles were selected and reviewed in detail to define 48 statements and 51 recommendations.",
+      "generated_answer": "The context provided does not explicitly state the exact number of articles reviewed in detail for the 2020 guidelines. However, it mentions processes such as study selection, risk of bias assessment, and data extraction. Segment references like \"3/63\" and \"4/63\" might imply positions within a larger document or database, but they don't provide a direct count of reviewed articles specific to the 2020 guidelines. Therefore, based on the provided information, it is not possible to specify the number of articles reviewed for the 2020 guidelines.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What procedures are compared in the population-based trend analysis by Zingg U, Rosella L, and Guller U for gastroesophageal reflux disease?",
+      "expected_answer": "laparoscopic Nissen and Toupet fundoplications",
+      "generated_answer": "The context provided does not explicitly mention the work of Zingg U, Rosella L, and Guller U, nor any population-based trend analysis specifically attributed to them. Therefore, I am unable to determine which procedures they compared in their study on gastroesophageal reflux disease based on the given text. However, the context does discuss various studies comparing medical therapy and surgical interventions like laparoscopic Nissen fundoplication for gastroesophageal reflux disease (GERD), as well as evaluations of cost-effectiveness and long-term outcomes of such treatments (e.g., context references [52], [53], [56]). If you have more specific information or another context segment, please provide it for a more targeted response.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What model was used for the meta-analysis in non-randomized studies, and what ratios were calculated for dichotomous outcomes?",
+      "expected_answer": "RevMan (Version 5.3.5) was used to perform meta-analysis using a Mantel-Haenszel random-effects model, and risk ratios (RR) and odds ratios (OR) were calculated for dichotomous outcomes from randomized and non-randomized studies, respectively.",
+      "generated_answer": "In the provided context, the meta-analysis for non-randomized studies was performed using random and fixed effects models. Specifically, for dichotomous outcomes, Risk Ratios (RR) were calculated. This is evidenced by references to various outcomes and their associated risk ratios throughout the text (e.g., \"POEM was better, to a level determined to be of clinical significance by the panel, in the outcomes of: Postoperative pain... (RR 0.88 CI [0.60- 1.29])\" and \"Serious adverse events... (RR 0.36 CI [0.10-1.34])\", found in the \"Data Analysis\" and \"Harms and burden\" sections).",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What are the sensitivity and specificity of contrast-enhanced MRI compared to CT for diagnosing AA according to Kinner et al.?",
+      "expected_answer": "MRI had sensitivity of 96.8% and specificity of 97.4%, while CT had sensitivity of 94.4% and specificity of 95.8%.",
+      "generated_answer": "The context provided does not include specific information about the sensitivity and specificity of contrast-enhanced MRI compared to CT for diagnosing AA according to Kinner et al. The text focuses on the methodology and results of a systematic review and meta-analysis related to gastroesophageal reflux disease (GERD) and surgical procedures such as fundoplication, with no mention of the diagnostic accuracy of imaging modalities for AA (which is assumed to mean abdominal aortic aneurysm) or a specific study by Kinner et al. Without access to the original study by Kinner et al., it is not possible to provide the requested sensitivity and specificity data.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What was the overall event rate for perioperative complications in sleeve patients, and what was the confidence interval?",
+      "expected_answer": "The overall event rate was 8.70% (95% CI 5.83-12.85%).",
+      "generated_answer": "The context provided does not specifically mention the overall event rate for perioperative complications in sleeve patients, nor does it provide a confidence interval for this data. The text primarily discusses the methodologies and processes related to systematic review and meta-analysis, including study selection, risk of bias assessment, and outcomes related to various surgical interventions such as fundoplication and Roux-en-Y procedures.\n\nTo determine the overall event rate and confidence interval for perioperative complications in sleeve patients, one would typically extract such data from study results and calculate it during the data analysis phase using statistical software like RevMan, as mentioned in the context. However, specifics on sleeve patients are not included in the provided segments.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What type of evidence is described as having 'important limitations' in RCTs?",
+      "expected_answer": "Low-quality evidence with serious or very serious quality limitations in RCTs that affect the confidence in the estimate of effect.",
+      "generated_answer": "In the context provided, evidence described as having \"important limitations\" in randomized controlled trials (RCTs) is associated with the risk of bias. This includes factors assessed by the Cochrane Risk of Bias tool, such as sequence generation, allocation concealment, blinding of participants and personnel, blinding of outcome assessors, incomplete data, performance bias, and detection bias (Cochrane Risk of Bias tool: Section \"Risk of Bias in Individual Studies\").\n\nAny discrepancies or issues in these areas could contribute to important limitations in the evidence, as they might impact the reliability and validity of the trial outcomes. Additionally, significant heterogeneity in meta-analysis might also indicate discrepancies in study quality due to differing levels of risk of bias (Final risk of bias assessment: Section \"Risk of bias in individual studies\").",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "How many studies compared selective IOC against no IOC for KQ1, and what was the total number of patients in each group?",
+      "expected_answer": "Five RCTs comparing 672 patients receiving selective IOC to 696 patients with no IOC.",
+      "generated_answer": "The number of studies comparing selective intraoperative cholangiography (IOC) against no IOC for KQ1 is not explicitly provided in the provided context. However, the context does include descriptions of different key questions and outcomes related to surgical procedures such as fundoplication and Roux-en-Y, and it mentions data extraction forms on Covidence including study characteristics, but does not specifically mention KQ1 related to selective IOC versus no IOC or provide total numbers for each group.\n\nUnfortunately, based on the provided context segments, I cannot determine the specific number of studies or the total number of patients in each group for the comparison of selective IOC against no IOC for KQ1. Additional specific sections of the study or supplementary materials would be needed to answer this question.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What was the operative mortality percentage for patients undergoing elective interval cholecystectomy according to Gul et al.?",
+      "expected_answer": "0% operative mortality rate.",
+      "generated_answer": "The context provided does not include specific information about the operative mortality percentage for patients undergoing elective interval cholecystectomy according to Gul et al. The details regarding Gul et al.'s study or findings on operative mortality are not mentioned in the given text segments. For accurate information, the original study by Gul et al. would need to be referenced directly.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What was the relative risk of serious adverse events in the POEM group compared to the PD group?",
+      "expected_answer": "RR = 0.44 (95% CI 0.21-0.92), indicating POEM had significantly fewer serious adverse events.",
+      "generated_answer": "The context provided does not include specific numeric data on the relative risk of serious adverse events between the POEM (Peroral Endoscopic Myotomy) group and the PD (Pneumatic Dilation) group. To answer this question accurately, you would need to access the study results from the specific meta-analysis or clinical trial that evaluated these interventions. The appropriate data would typically be found in the results section of a research paper or systematic review that has been identified and selected for the meta-analysis. If this information is indeed part of the studies mentioned in the context, it may be detailed in one of the individual papers reviewed during the data extraction and meta-analysis processes.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What method is suggested for mitigating bile duct injury risk in patients with acute cholecystitis?",
+      "expected_answer": "The critical view of safety (CVS) technique should be used to identify the cystic duct and artery before clipping.",
+      "generated_answer": "The context you provided does not directly address methods for mitigating bile duct injury risk in patients with acute cholecystitis. The extracted content focuses primarily on gastroesophageal reflux disease (GERD) treatments and comparisons between different surgical techniques like Nissen and Toupet fundoplications. There are no specifics mentioned about bile duct injury or strategies specifically tailored for acute cholecystitis.\n\nHowever, in general practice, to mitigate bile duct injury during cholecystectomy for acute cholecystitis, the \"critical view of safety\" technique is frequently recommended. This involves careful dissection to clearly expose the cystic duct and cystic artery before any structures are clipped or cut. Another strategy involves the use of intraoperative cholangiography to help delineate the biliary anatomy more clearly during surgery, reducing the risk of inadvertently injuring the bile duct.\n\nFor more detailed information or specific studies, reviewing literature focused explicitly on cholecystitis management would be necessary.",
+      "verification": {
+        "verification_score": 0.0,
+        "confidence_level": "low",
+        "total_claims": 4,
+        "verified_claims": 0,
+        "unverified_claims": 4,
+        "category_scores": {
+          "instruments": 0.0,
+          "step_order": 1.0,
+          "anatomy": 0.0,
+          "complications": 0.0
+        },
+        "unverified_details": [
+          {
+            "type": "instrument",
+            "claim": {
+              "step": "intraoperative cholangiography",
+              "instrument": "cholangiography equipment",
+              "usage": "used to delineate the biliary anatomy more clearly during surgery"
+            },
+            "reason": "No graph relationship found"
+          },
+          {
+            "type": "anatomy",
+            "claim": {
+              "procedure": "cholecystectomy",
+              "anatomical_structure": "cystic duct",
+              "relationship": "IDENTIFIES"
+            },
+            "reason": "Anatomical structure not found in graph"
+          },
+          {
+            "type": "anatomy",
+            "claim": {
+              "procedure": "cholecystectomy",
+              "anatomical_structure": "cystic artery",
+              "relationship": "IDENTIFIES"
+            },
+            "reason": "Anatomical structure not found in graph"
+          },
+          {
+            "type": "complication",
+            "claim": {
+              "procedure": "cholecystectomy",
+              "complication": "bile duct injury",
+              "management": "critical view of safety technique"
+            },
+            "reason": "Complication not found in graph"
+          }
+        ],
+        "extracted_claims": {
+          "instrument_claims": [
+            {
+              "step": "intraoperative cholangiography",
+              "instrument": "cholangiography equipment",
+              "usage": "used to delineate the biliary anatomy more clearly during surgery"
+            }
+          ],
+          "step_order_claims": [],
+          "anatomy_claims": [
+            {
+              "procedure": "cholecystectomy",
+              "anatomical_structure": "cystic duct",
+              "relationship": "IDENTIFIES"
+            },
+            {
+              "procedure": "cholecystectomy",
+              "anatomical_structure": "cystic artery",
+              "relationship": "IDENTIFIES"
+            }
+          ],
+          "complication_claims": [
+            {
+              "procedure": "cholecystectomy",
+              "complication": "bile duct injury",
+              "management": "critical view of safety technique"
+            }
+          ]
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 4,
+          "classifications": [
+            {
+              "hallucination_type": "instrument_incorrect",
+              "category": "instrument",
+              "severity": "high",
+              "description": "Wrong instrument specified for surgical step",
+              "unverified_claim": {
+                "type": "instrument",
+                "claim": {
+                  "step": "intraoperative cholangiography",
+                  "instrument": "cholangiography equipment",
+                  "usage": "used to delineate the biliary anatomy more clearly during surgery"
+                },
+                "reason": "No graph relationship found"
+              },
+              "confidence": 0.95
+            },
+            {
+              "hallucination_type": "anatomical_structure_error",
+              "category": "anatomical",
+              "severity": "critical",
+              "description": "Incorrect anatomical structure mentioned",
+              "unverified_claim": {
+                "type": "anatomy",
+                "claim": {
+                  "procedure": "cholecystectomy",
+                  "anatomical_structure": "cystic duct",
+                  "relationship": "IDENTIFIES"
+                },
+                "reason": "Anatomical structure not found in graph"
+              },
+              "confidence": 0.95
+            },
+            {
+              "hallucination_type": "anatomical_structure_error",
+              "category": "anatomical",
+              "severity": "critical",
+              "description": "Incorrect anatomical structure mentioned",
+              "unverified_claim": {
+                "type": "anatomy",
+                "claim": {
+                  "procedure": "cholecystectomy",
+                  "anatomical_structure": "cystic artery",
+                  "relationship": "IDENTIFIES"
+                },
+                "reason": "Anatomical structure not found in graph"
+              },
+              "confidence": 0.95
+            },
+            {
+              "hallucination_type": "management_error",
+              "category": "complication",
+              "severity": "critical",
+              "description": "Incorrect complication management advice",
+              "unverified_claim": {
+                "type": "complication",
+                "claim": {
+                  "procedure": "cholecystectomy",
+                  "complication": "bile duct injury",
+                  "management": "critical view of safety technique"
+                },
+                "reason": "Complication not found in graph"
+              },
+              "confidence": 0.95
+            }
+          ],
+          "category_distribution": {
+            "instrument": 1,
+            "anatomical": 2,
+            "complication": 1
+          },
+          "severity_distribution": {
+            "critical": 3,
+            "high": 1,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 3,
+          "recommendations": [
+            "⚠️ CRITICAL: Manual review required before clinical use",
+            "Enhance anatomy knowledge graph with more detailed relationships",
+            "Expand instrument-procedure mappings in knowledge graph",
+            "Include comprehensive complication data in knowledge base"
+          ],
+          "safety_score": 0.125
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Insufficient verification confidence (0%). Only 0/4 claims verified in knowledge graph."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.2,
+          "overall_uncertainty": 0.8,
+          "components": {
+            "verification_certainty": 0.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very Low Confidence - Abstain"
+        },
+        "warning_message": "⚠️ CAUTION: Insufficient evidence in knowledge base. Consult supervisor or primary sources before use."
+      }
+    },
+    {
+      "question": "What is the recurrence rate of symptoms within 1 year following antibiotic-first treatment for uncomplicated acute appendicitis?",
+      "expected_answer": "Approximately 27-35% recurrence rate within 1 year.",
+      "generated_answer": "The context provided does not specifically discuss the recurrence rate of symptoms within one year following antibiotic-first treatment for uncomplicated acute appendicitis. The excerpts focus on unrelated surgical comparisons and outcomes in different contexts such as fundoplication, redo repairs, and POEM versus Heller myotomy, among others. \n\nIf you are looking for data specific to antibiotic-first treatment for appendicitis, that would require sourcing data beyond what is presented in the text.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What is the relative risk and confidence interval for success/symptom resolution by Eckardt score after POEM compared to PD?",
+      "expected_answer": "RR = 1.12 (95% CI 1.03-1.22), indicating POEM had superior symptom resolution.",
+      "generated_answer": "The context provided does not contain specific numerical values such as the relative risk or confidence interval for success or symptom resolution by Eckardt score after peroral endoscopic myotomy (POEM) compared to pneumatic dilation (PD). To find this information, you would need to refer to original studies or meta-analyses that explicitly compare these two procedures concerning the Eckardt score outcomes. The provided text focuses on the methodology of a systematic review and meta-analysis but does not include explicit results or quantitative comparisons for those specific procedures. For detailed outcomes, reviewing the results sections of relevant published articles would be necessary.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What is the recommended first-line diagnostic tool for acute appendicitis in both adults and children according to WSES guidelines?",
+      "expected_answer": "Ultrasound is recommended as the first-line imaging modality, followed by CT or MRI if ultrasound is inconclusive.",
+      "generated_answer": "The context provided does not contain information regarding the recommended first-line diagnostic tool for acute appendicitis in adults and children according to the World Society of Emergency Surgery (WSES) guidelines. Therefore, I am unable to answer this question directly from the context.\n\nHowever, according to the WSES guidelines, which are not mentioned in the provided text, the first-line diagnostic tool for suspected acute appendicitis in adults is typically an abdominal ultrasound, with a CT scan recommended in cases where the ultrasound is inconclusive. In children, ultrasound is also recommended as the first-line imaging modality to minimize radiation exposure. \n\nFor accurate information, please refer to the specific guidelines issued by WSES.",
+      "verification": {
+        "verification_score": 0.0,
+        "confidence_level": "low",
+        "total_claims": 3,
+        "verified_claims": 0,
+        "unverified_claims": 3,
+        "category_scores": {
+          "instruments": 0.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [
+          {
+            "type": "instrument",
+            "claim": {
+              "step": "diagnosis of acute appendicitis in adults",
+              "instrument": "abdominal ultrasound",
+              "usage": "used as the first-line diagnostic tool"
+            },
+            "reason": "No graph relationship found"
+          },
+          {
+            "type": "instrument",
+            "claim": {
+              "step": "diagnosis of acute appendicitis in adults",
+              "instrument": "CT scan",
+              "usage": "recommended when ultrasound is inconclusive"
+            },
+            "reason": "No graph relationship found"
+          },
+          {
+            "type": "instrument",
+            "claim": {
+              "step": "diagnosis of acute appendicitis in children",
+              "instrument": "ultrasound",
+              "usage": "used as the first-line imaging modality to minimize radiation exposure"
+            },
+            "reason": "No graph relationship found"
+          }
+        ],
+        "extracted_claims": {
+          "instrument_claims": [
+            {
+              "step": "diagnosis of acute appendicitis in adults",
+              "instrument": "abdominal ultrasound",
+              "usage": "used as the first-line diagnostic tool"
+            },
+            {
+              "step": "diagnosis of acute appendicitis in adults",
+              "instrument": "CT scan",
+              "usage": "recommended when ultrasound is inconclusive"
+            },
+            {
+              "step": "diagnosis of acute appendicitis in children",
+              "instrument": "ultrasound",
+              "usage": "used as the first-line imaging modality to minimize radiation exposure"
+            }
+          ],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 3,
+          "classifications": [
+            {
+              "hallucination_type": "instrument_incorrect",
+              "category": "instrument",
+              "severity": "high",
+              "description": "Wrong instrument specified for surgical step",
+              "unverified_claim": {
+                "type": "instrument",
+                "claim": {
+                  "step": "diagnosis of acute appendicitis in adults",
+                  "instrument": "abdominal ultrasound",
+                  "usage": "used as the first-line diagnostic tool"
+                },
+                "reason": "No graph relationship found"
+              },
+              "confidence": 0.95
+            },
+            {
+              "hallucination_type": "instrument_incorrect",
+              "category": "instrument",
+              "severity": "high",
+              "description": "Wrong instrument specified for surgical step",
+              "unverified_claim": {
+                "type": "instrument",
+                "claim": {
+                  "step": "diagnosis of acute appendicitis in adults",
+                  "instrument": "CT scan",
+                  "usage": "recommended when ultrasound is inconclusive"
+                },
+                "reason": "No graph relationship found"
+              },
+              "confidence": 0.95
+            },
+            {
+              "hallucination_type": "instrument_incorrect",
+              "category": "instrument",
+              "severity": "high",
+              "description": "Wrong instrument specified for surgical step",
+              "unverified_claim": {
+                "type": "instrument",
+                "claim": {
+                  "step": "diagnosis of acute appendicitis in children",
+                  "instrument": "ultrasound",
+                  "usage": "used as the first-line imaging modality to minimize radiation exposure"
+                },
+                "reason": "No graph relationship found"
+              },
+              "confidence": 0.95
+            }
+          ],
+          "category_distribution": {
+            "instrument": 3
+          },
+          "severity_distribution": {
+            "critical": 0,
+            "high": 3,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [
+            "Expand instrument-procedure mappings in knowledge graph"
+          ],
+          "safety_score": 0.5
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Insufficient verification confidence (0%). Only 0/3 claims verified in knowledge graph."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.2,
+          "overall_uncertainty": 0.8,
+          "components": {
+            "verification_certainty": 0.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very Low Confidence - Abstain"
+        },
+        "warning_message": "⚠️ CAUTION: Insufficient evidence in knowledge base. Consult supervisor or primary sources before use."
+      }
+    },
+    {
+      "question": "What was the relative risk of intraoperative stone identification in observational studies comparing routine IOC to selective IOC?",
+      "expected_answer": "RR = 2.26 (95% CI 1.04-4.93), showing routine IOC identifies more stones intraoperatively.",
+      "generated_answer": "The context provided does not contain specific details or numeric values regarding the relative risk of intraoperative stone identification in observational studies comparing routine intraoperative cholangiography (IOC) to selective IOC. The text primarily addresses systematic review processes, study selection, risk of bias assessment, and data extraction methods (see especially the sections starting \"Study Selection\" and \"Risk of Bias in Individual Studies\"). To determine the relative risk, you would need specific study results or data, which are not included in the given excerpts.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What is the recommended time frame for performing an appendectomy in pediatric patients with uncomplicated acute appendicitis?",
+      "expected_answer": "Within 24 hours of admission to avoid increased risk of perforation and complications.",
+      "generated_answer": "The context provided does not directly address the recommended time frame for performing an appendectomy in pediatric patients with uncomplicated acute appendicitis. The information is focused on studies related to fundoplication, hiatal hernia repair, POEM, and Heller myotomy, none of which pertain to appendicitis management. For specific guidelines or recommendations on the timing of appendectomy in pediatric cases of uncomplicated acute appendicitis, other specialized literature or clinical guidelines should be consulted.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What is the OR and IÂ² value for technical failures in studies with selective IOC versus no IOC?",
+      "expected_answer": "OR = 1.05 (95% CI 0.32-3.43), IÂ² = 0%, indicating no significant difference in technical failures.",
+      "generated_answer": "The odds ratio (OR) and I² value for technical failures in studies with selective intraoperative cholangiography (IOC) versus no IOC are not provided in the information detailed above. The provided context discusses various aspects of a systematic review and meta-analysis process, including risk of bias assessments and the outcomes of different surgical interventions (such as fundoplication and Roux-en-Y procedures), but it does not mention specific data related to selective IOC versus no IOC.\n\nTo answer your question, you may need to refer to the context or data from the original systematic review and meta-analysis, as they are not available in the provided text.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What are the procedural steps for right adrenalectomy as described in the text?",
+      "expected_answer": "Lateral transabdominal approach: patient positioning, port placement, mobilization of right colon, identification of adrenal gland, vessel ligation, gland removal.",
+      "generated_answer": "The text you provided does not include specific procedural steps for a right adrenalectomy. The content primarily deals with the comparison of surgical outcomes, including fundoplication versus no fundoplication, and Roux-en-Y versus redo repair for recurrent hernia. It also details the methodology for systematic reviews and meta-analyses, such as search strategy, risk of bias assessment, and data extraction, but does not cover technical details of performing a right adrenalectomy. If you have another text or require guidance on a different topic, please provide the relevant information, and I'll do my best to assist you.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What was the overall complication rate for laparoscopic appendectomy (LA) as mentioned in the text?",
+      "expected_answer": "8.7%",
+      "generated_answer": "The text provided does not mention the overall complication rate for laparoscopic appendectomy (LA). The context primarily discusses studies related to procedures for gastroesophageal reflux disease, including fundoplication and Roux-en-Y, but does not address laparoscopic appendectomy specifically. If you need information regarding the complication rate for laparoscopic appendectomy, you might want to consult studies or reviews specifically focused on that procedure.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "How many articles were selected and reviewed in detail to define the statements and recommendations in the surgical text?",
+      "expected_answer": "157 articles were selected and reviewed in detail.",
+      "generated_answer": "A total of 45 studies were selected and reviewed in detail to define the statements and recommendations for the key questions (KQs) outlined in the surgical text. This is stated in the results section: \"After exclusions based on the criteria above, there were 45 studies that fulfilled one or more of the four KQs\" (Context: 5/63).",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What type of evidence is described as having \"important limitations\" such as inconsistent results, methodological flaws, indirectness, or imprecision?",
+      "expected_answer": "Evidence from RCTs with important limitations.",
+      "generated_answer": "The type of evidence described as having \"important limitations\" such as inconsistent results, methodological flaws, indirectness, or imprecision is categorized as having low or very low certainty. This assessment is based on factors like risk of bias, imprecision of estimates, or general inconsistencies in the data. The context mentions the certainty of evidence of effects was rated as \"low or very low owing to the risk of bias and imprecision of the estimates\" (see evidence profile in the EtD framework, Appendix C).",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What is the most appropriate first-line diagnostic tool for acute appendicitis in both adults and children, according to the 2020 guidelines?",
+      "expected_answer": "POCUS (Point-of-care Ultrasound) is recommended as the most appropriate first-line diagnostic tool in both adults and children.",
+      "generated_answer": "The context provided does not mention specific guidelines or diagnostic tools related to acute appendicitis in adults and children. Therefore, I cannot cite the relevant information from the given segments. \n\nHowever, generally, according to the 2020 guidelines commonly referred to by medical societies, the first-line diagnostic tool for suspected acute appendicitis in adults is often an abdominal ultrasound, particularly in children, to reduce radiation exposure. For adults, while ultrasound is commonly used, a CT scan is frequently utilized due to its higher diagnostic accuracy. It's important to consult the actual guidelines or a current review article for precise recommendations and citations.",
+      "verification": {
+        "verification_score": 0.0,
+        "confidence_level": "low",
+        "total_claims": 2,
+        "verified_claims": 0,
+        "unverified_claims": 2,
+        "category_scores": {
+          "instruments": 0.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [
+          {
+            "type": "instrument",
+            "claim": {
+              "step": "diagnosis of acute appendicitis in children",
+              "instrument": "abdominal ultrasound",
+              "usage": "used to reduce radiation exposure"
+            },
+            "reason": "No graph relationship found"
+          },
+          {
+            "type": "instrument",
+            "claim": {
+              "step": "diagnosis of acute appendicitis in adults",
+              "instrument": "CT scan",
+              "usage": "used for higher diagnostic accuracy"
+            },
+            "reason": "No graph relationship found"
+          }
+        ],
+        "extracted_claims": {
+          "instrument_claims": [
+            {
+              "step": "diagnosis of acute appendicitis in children",
+              "instrument": "abdominal ultrasound",
+              "usage": "used to reduce radiation exposure"
+            },
+            {
+              "step": "diagnosis of acute appendicitis in adults",
+              "instrument": "CT scan",
+              "usage": "used for higher diagnostic accuracy"
+            }
+          ],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 2,
+          "classifications": [
+            {
+              "hallucination_type": "instrument_incorrect",
+              "category": "instrument",
+              "severity": "high",
+              "description": "Wrong instrument specified for surgical step",
+              "unverified_claim": {
+                "type": "instrument",
+                "claim": {
+                  "step": "diagnosis of acute appendicitis in children",
+                  "instrument": "abdominal ultrasound",
+                  "usage": "used to reduce radiation exposure"
+                },
+                "reason": "No graph relationship found"
+              },
+              "confidence": 0.95
+            },
+            {
+              "hallucination_type": "instrument_incorrect",
+              "category": "instrument",
+              "severity": "high",
+              "description": "Wrong instrument specified for surgical step",
+              "unverified_claim": {
+                "type": "instrument",
+                "claim": {
+                  "step": "diagnosis of acute appendicitis in adults",
+                  "instrument": "CT scan",
+                  "usage": "used for higher diagnostic accuracy"
+                },
+                "reason": "No graph relationship found"
+              },
+              "confidence": 0.95
+            }
+          ],
+          "category_distribution": {
+            "instrument": 2
+          },
+          "severity_distribution": {
+            "critical": 0,
+            "high": 2,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [
+            "Expand instrument-procedure mappings in knowledge graph"
+          ],
+          "safety_score": 0.5
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Insufficient verification confidence (0%). Only 0/2 claims verified in knowledge graph."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.2,
+          "overall_uncertainty": 0.8,
+          "components": {
+            "verification_certainty": 0.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very Low Confidence - Abstain"
+        },
+        "warning_message": "⚠️ CAUTION: Insufficient evidence in knowledge base. Consult supervisor or primary sources before use."
+      }
+    },
+    {
+      "question": "What was the mean radiation dose of low-dose CT compared with standard CT in the OPTICAP randomized trial?",
+      "expected_answer": "The mean radiation dose of low-dose CT was 3.33 mSv, compared with 4.44 mSv for standard CT.",
+      "generated_answer": "The specific mean radiation dose of low-dose CT compared with standard CT in the OPTICAP randomized trial is not provided in the context segments you've shared. To find this information, one would need access to the full details of the OPTICAP trial, as the provided context does not include a description of the mean radiation doses. Please refer to the original study or trial publication for precise data on the radiation doses used.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    },
+    {
+      "question": "What percentage of agreement was obtained for the recommendation to avoid cross-sectional imaging before diagnostic +/- therapeutic laparoscopy for high-risk patients younger than 40 years old with specific AIR, Alvarado, and AAS scores?",
+      "expected_answer": "68.0%",
+      "generated_answer": "The context you provided does not contain specific information or data regarding the recommendation to avoid cross-sectional imaging before diagnostic +/- therapeutic laparoscopy for high-risk patients younger than 40 years old with specific AIR, Alvarado, and AAS scores. Therefore, the percentage of agreement for such a recommendation cannot be determined from the provided text.\n\nTo find this information, one would need to refer to additional sources or data that specifically address those criteria and patient demographics in the context of cross-sectional imaging and laparoscopy recommendations.",
+      "verification": {
+        "verification_score": 1.0,
+        "confidence_level": "high",
+        "total_claims": 0,
+        "verified_claims": 0,
+        "unverified_claims": 0,
+        "category_scores": {
+          "instruments": 1.0,
+          "step_order": 1.0,
+          "anatomy": 1.0,
+          "complications": 1.0
+        },
+        "unverified_details": [],
+        "extracted_claims": {
+          "instrument_claims": [],
+          "step_order_claims": [],
+          "anatomy_claims": [],
+          "complication_claims": []
+        },
+        "hallucination_analysis": {
+          "total_hallucinations": 0,
+          "classifications": [],
+          "category_distribution": {},
+          "severity_distribution": {
+            "critical": 0,
+            "high": 0,
+            "medium": 0,
+            "low": 0
+          },
+          "critical_count": 0,
+          "recommendations": [],
+          "safety_score": 1.0
+        },
+        "abstention_decision": {
+          "should_abstain": true,
+          "reason": "Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base."
+        },
+        "uncertainty_analysis": {
+          "overall_certainty": 0.8,
+          "overall_uncertainty": 0.19999999999999996,
+          "components": {
+            "verification_certainty": 1.0,
+            "retrieval_certainty": 0.5,
+            "generation_certainty": 0.5
+          },
+          "interpretation": "Very High Confidence"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# Files/directories to ignore for auto-reload
+test_*.py
+*_test.py
+evaluation/
+__pycache__/
+*.pyc
+*.pyo
+*.md
+*.txt
+*.json
+*.log
+.git/
+.vscode/
+*.egg-info/
+dist/
+build/

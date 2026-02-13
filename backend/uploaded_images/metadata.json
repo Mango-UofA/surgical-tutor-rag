@@ -1,146 +1,110 @@
 {
-  "78e373b1d1bcbe02": {
-    "image_id": "78e373b1d1bcbe02",
-    "filename": "78e373b1d1bcbe02.jpg",
-    "original_filename": "v10_034725.jpg",
-    "upload_timestamp": "2026-01-26T06:46:41.883685",
-    "file_size": 23039,
+  "901ca8953fa18630": {
+    "image_id": "901ca8953fa18630",
+    "filename": "901ca8953fa18630.jpg",
+    "original_filename": "v10_034700.jpg",
+    "upload_timestamp": "2026-02-13T12:45:56.052415",
+    "file_size": 22036,
     "procedure": null,
-    "quality_score": 23.09949795976228,
+    "quality_score": 22.365516567009433,
     "detected_instruments": [
       {
         "category": "laparoscope",
-        "probability": 0.04466128721833229
+        "probability": 0.02753986418247223
       },
       {
         "category": "trocar",
-        "probability": 0.3047635555267334
+        "probability": 0.7106161117553711
       },
       {
         "category": "grasper",
-        "probability": 0.43078678846359253
+        "probability": 0.13316398859024048
       },
       {
         "category": "scissors",
-        "probability": 0.08126915991306305
+        "probability": 0.055528055876493454
       },
       {
         "category": "clip applier",
-        "probability": 0.00033589484519325197
+        "probability": 0.0004130869056098163
       }
     ],
-    "surgical_phase": "clipping and cutting",
-    "file_path": "uploaded_images\\78e373b1d1bcbe02.jpg",
+    "surgical_phase": "critical view of safety",
+    "file_path": "uploaded_images\\901ca8953fa18630.jpg",
     "description": null,
     "width": 578,
     "height": 324
   },
-  "c7cc4a2c2554b25c": {
-    "image_id": "c7cc4a2c2554b25c",
-    "filename": "c7cc4a2c2554b25c.jpg",
-    "original_filename": "v10_054775.jpg",
-    "upload_timestamp": "2026-01-26T08:11:38.976395",
-    "file_size": 16289,
+  "7da848d50eb75762": {
+    "image_id": "7da848d50eb75762",
+    "filename": "7da848d50eb75762.jpg",
+    "original_filename": "dataset-cover.jpg",
+    "upload_timestamp": "2026-02-13T12:47:15.323157",
+    "file_size": 29910,
     "procedure": null,
-    "quality_score": 20.17531664622091,
+    "quality_score": 17.14603990465523,
     "detected_instruments": [
       {
         "category": "laparoscope",
-        "probability": 0.033282388001680374
+        "probability": 0.4087241590023041
       },
       {
         "category": "trocar",
-        "probability": 0.0010897699976339936
+        "probability": 0.001359103829599917
       },
       {
         "category": "grasper",
-        "probability": 0.29058125615119934
+        "probability": 0.03786703199148178
       },
       {
         "category": "scissors",
-        "probability": 0.18297737836837769
+        "probability": 0.00826334673911333
       },
       {
         "category": "clip applier",
-        "probability": 0.006362446118146181
-      }
-    ],
-    "surgical_phase": "clipping and cutting",
-    "file_path": "uploaded_images\\c7cc4a2c2554b25c.jpg",
-    "description": null,
-    "width": 578,
-    "height": 324
-  },
-  "87b9e810d4209742": {
-    "image_id": "87b9e810d4209742",
-    "filename": "87b9e810d4209742.jpg",
-    "original_filename": "v10_064925_flip.jpg",
-    "upload_timestamp": "2026-01-29T21:24:40.357160",
-    "file_size": 17295,
-    "procedure": null,
-    "quality_score": 21.379924666513812,
-    "detected_instruments": [
-      {
-        "category": "laparoscope",
-        "probability": 0.06527258455753326
-      },
-      {
-        "category": "trocar",
-        "probability": 0.0027728001587092876
-      },
-      {
-        "category": "grasper",
-        "probability": 0.6280343532562256
-      },
-      {
-        "category": "scissors",
-        "probability": 0.02639857679605484
-      },
-      {
-        "category": "clip applier",
-        "probability": 0.0003573270223569125
+        "probability": 0.0014677040744572878
       }
     ],
     "surgical_phase": "hemostasis and irrigation",
-    "file_path": "uploaded_images\\87b9e810d4209742.jpg",
+    "file_path": "uploaded_images\\7da848d50eb75762.jpg",
     "description": null,
-    "width": 578,
-    "height": 324
+    "width": 795,
+    "height": 400
   },
-  "d802aa11e61e03d0": {
-    "image_id": "d802aa11e61e03d0",
-    "filename": "d802aa11e61e03d0.jpg",
-    "original_filename": "v10_064275.jpg",
-    "upload_timestamp": "2026-01-30T13:35:42.721145",
-    "file_size": 24844,
+  "c09149ffee121967": {
+    "image_id": "c09149ffee121967",
+    "filename": "c09149ffee121967.jpg",
+    "original_filename": "R001_ch1_video_01_00-39-14-28.jpg",
+    "upload_timestamp": "2026-02-13T12:48:05.750819",
+    "file_size": 62493,
     "procedure": null,
-    "quality_score": 28.195569321269456,
+    "quality_score": 20.261781379079245,
     "detected_instruments": [
       {
         "category": "laparoscope",
-        "probability": 0.0023079020902514458
+        "probability": 0.5678619146347046
       },
       {
         "category": "trocar",
-        "probability": 0.0004444575170055032
+        "probability": 0.001231252565048635
       },
       {
         "category": "grasper",
-        "probability": 0.5432554483413696
+        "probability": 0.2958676517009735
       },
       {
         "category": "scissors",
-        "probability": 0.271374374628067
+        "probability": 0.018310241401195526
       },
       {
         "category": "clip applier",
-        "probability": 0.09852853417396545
+        "probability": 0.0012759851524606347
       }
     ],
     "surgical_phase": "hemostasis and irrigation",
-    "file_path": "uploaded_images\\d802aa11e61e03d0.jpg",
+    "file_path": "uploaded_images\\c09149ffee121967.jpg",
     "description": null,
-    "width": 578,
-    "height": 324
+    "width": 1280,
+    "height": 1024
   }
 }

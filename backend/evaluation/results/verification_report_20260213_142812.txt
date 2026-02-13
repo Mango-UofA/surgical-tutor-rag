@@ -1,0 +1,105 @@
+================================================================================
+VERIFICATION METRICS REPORT FOR MICCAI SUBMISSION
+================================================================================
+
+Generated: 2026-02-13 14:28:12
+Test Set Size: 33 QA pairs
+
+--------------------------------------------------------------------------------
+OVERALL METRICS
+--------------------------------------------------------------------------------
+Average Verification Score:    84.85%
+Average Safety Score:          0.00/100
+Average Certainty:             0.00%
+Abstention Rate:               100.00% (33/33)
+Total Hallucinations Detected: 0
+
+--------------------------------------------------------------------------------
+CONFIDENCE DISTRIBUTION
+--------------------------------------------------------------------------------
+High Confidence Answers:       28 (84.8%)
+  - Avg Verification:          100.00%
+Low Confidence Answers:        5 (15.2%)
+  - Avg Verification:          0.00%
+
+--------------------------------------------------------------------------------
+SAMPLE VERIFICATION RESULTS (First 5 examples)
+--------------------------------------------------------------------------------
+
+
+[EXAMPLE 1]
+Question: What was the cost difference between robotic and laparoscopic fundoplication in children according to Anderberg et al.?...
+
+Generated Answer: The context does not provide specific information regarding the cost difference between robotic and laparoscopic fundoplication in children according to Anderberg et al. Therefore, I cannot provide an...
+
+Verification Score:    100.00%
+Confidence Level:      HIGH
+Safety Score:          0/100
+Abstention:            YES
+  Reason: Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base.
+  Strategy: N/A
+Hallucinations:        0 detected
+
+--------------------------------------------------------------------------------
+
+[EXAMPLE 2]
+Question: What is the impact of further research on low-quality evidence with strong recommendation?...
+
+Generated Answer: The impact of further research on low-quality evidence with strong recommendations is significant, as it can potentially change the level of certainty and the direction of recommendations. In the cont...
+
+Verification Score:    100.00%
+Confidence Level:      HIGH
+Safety Score:          0/100
+Abstention:            YES
+  Reason: Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base.
+  Strategy: N/A
+Hallucinations:        0 detected
+
+--------------------------------------------------------------------------------
+
+[EXAMPLE 3]
+Question: What tool was used to assess the risk of bias in randomized control trials?...
+
+Generated Answer: The Cochrane Risk of Bias 2.0 tool was used to assess the risk of bias in randomized control trials (RCTs) (see context: "Risk of Bias in Individual Studies...using either the Cochrane Risk of Bias 2....
+
+Verification Score:    0.00%
+Confidence Level:      LOW
+Safety Score:          0/100
+Abstention:            YES
+  Reason: Insufficient verification confidence (0%). Only 0/1 claims verified in knowledge graph.
+  Strategy: N/A
+Hallucinations:        0 detected
+
+--------------------------------------------------------------------------------
+
+[EXAMPLE 4]
+Question: What are the four stages of the GROW model as described by Singh et al.?...
+
+Generated Answer: The GROW model, as described by Singh et al., consists of four stages: Goal, Reality, Options (or Obstacles), and Will (or Way forward). The context provided does not include a specific citation from ...
+
+Verification Score:    100.00%
+Confidence Level:      HIGH
+Safety Score:          0/100
+Abstention:            YES
+  Reason: Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base.
+  Strategy: N/A
+Hallucinations:        0 detected
+
+--------------------------------------------------------------------------------
+
+[EXAMPLE 5]
+Question: What was the perioperative cost in US dollars for robotic fundoplication according to Owen 2014?...
+
+Generated Answer: The perioperative cost for robotic fundoplication according to Owen 2014 was 9,582 Euros. This information can be referenced from the context provided, although it does not provide an exact conversion...
+
+Verification Score:    100.00%
+Confidence Level:      HIGH
+Safety Score:          0/100
+Abstention:            YES
+  Reason: Unable to extract verifiable claims from answer. Question may be too vague or outside knowledge base.
+  Strategy: N/A
+Hallucinations:        0 detected
+
+--------------------------------------------------------------------------------
+
+[OK] Report complete

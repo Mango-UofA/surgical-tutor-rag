@@ -16,6 +16,14 @@ class QAMetrics:
     @staticmethod
     def normalize_answer(text: str) -> str:
         """Normalize text for comparison (lowercase, remove punctuation/articles)"""
+        # Handle dict input (from generator that returns dict with 'answer' key)
+        if isinstance(text, dict):
+            text = text.get('answer', str(text))
+        
+        # Convert to string if not already
+        if not isinstance(text, str):
+            text = str(text)
+        
         # Lowercase
         text = text.lower()
         

@@ -295,6 +295,22 @@ class Neo4jManager:
             record = result.single()
             return record['path'] if record else None
     
+    def execute_query(self, query: str, parameters: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+        """
+        Execute a Cypher query and return results.
+        Wrapper method for verification pipeline compatibility.
+        
+        Args:
+            query: Cypher query string
+            parameters: Query parameters
+        
+        Returns:
+            List of result records as dictionaries
+        """
+        with self.driver.session() as session:
+            result = session.run(query, parameters or {})
+            return [dict(record) for record in result]
+    
     def get_graph_statistics(self) -> Dict[str, int]:
         """
         Get statistics about the knowledge graph.

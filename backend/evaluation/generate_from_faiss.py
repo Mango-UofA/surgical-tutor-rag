@@ -7,9 +7,13 @@ import sys
 import json
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv(Path(__file__).parent.parent / '.env')
 
 # Add parent directory to path
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from modules.embedder.embedder import BioClinicalEmbedder
 from modules.retriever.faiss_manager import FaissManager
@@ -17,7 +21,7 @@ from modules.generator.generator import Generator
 
 
 def generate_test_dataset_from_faiss(
-    faiss_index_path: str = "faiss_index.index",  # Changed from ../faiss_index.index
+    faiss_index_path: str = "../faiss_index.index",
     num_samples: int = 10,
     output_file: str = "test_data/test_qa_pairs_from_faiss.json"
 ):
@@ -77,14 +81,18 @@ def generate_test_dataset_from_faiss(
         print(f"   Text length: {len(chunk_text)} chars")
         
         # Generate QA pair using GPT-4o
-        prompt = f"""Based on this medical/surgical text, generate a question and answer pair.
+        prompt = f"""Based on this medical/surgical text, generate a factual extractive question-answer pair.
 
 Text:
-{chunk_text[:1000]}
+{chunk_text[:1500]}
 
-Generate:
-1. A specific question that can be answered from this text
-2. A concise answer (1-2 sentences) based ONLY on information in the text
+IMPORTANT: Generate a question that:
+1. Uses specific terminology and key phrases from the text
+2. Is directly answerable from the text (extractive, not abstractive)
+3. Tests factual recall of surgical procedures, clinical guidelines, or medical facts
+4. Includes at least 2-3 key terms from the original text
+
+Generate a concise answer (1-2 sentences) using EXACT phrases from the text.
 
 Respond in JSON format:
 {{
