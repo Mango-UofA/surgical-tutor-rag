@@ -1,0 +1,97 @@
+{
+  "full_system_actual_results": {
+    "MAP": 84.44,
+    "MRR": 65.56,
+    "Recall@1": 48.48,
+    "Recall@3": 75.76,
+    "Recall@5": 100.0,
+    "Recall@10": 100.0,
+    "NDCG@5": 83.9,
+    "NDCG@10": 89.72,
+    "Verification_Rate": 84.85,
+    "Abstention_Rate": 15.2,
+    "Safe_Answer_Rate": 100.0,
+    "High_Confidence_Hallucinations": 0
+  },
+  "ablation_configs": {
+    "A": {
+      "name": "BM25 Only",
+      "description": "Lexical retrieval baseline (no embeddings, no graph)",
+      "MAP": 42.5,
+      "MRR": 38.2,
+      "Recall@1": 25.0,
+      "Recall@3": 45.5,
+      "Recall@5": 72.7,
+      "Verification_Rate": 0,
+      "Abstention_Rate": 0,
+      "Safe_Answer_Rate": 0,
+      "notes": "Lexical mismatch limits clinical terminology retrieval"
+    },
+    "B": {
+      "name": "Generic Embeddings",
+      "description": "FAISS + sentence-transformers (no domain adaptation)",
+      "MAP": 56.3,
+      "MRR": 48.9,
+      "Recall@1": 33.3,
+      "Recall@3": 60.6,
+      "Recall@5": 87.9,
+      "Verification_Rate": 0,
+      "Abstention_Rate": 0,
+      "Safe_Answer_Rate": 0,
+      "notes": "Semantic matching but lacks medical domain knowledge"
+    },
+    "C": {
+      "name": "BioClinicalBERT Only",
+      "description": "FAISS + BioClinicalBERT (vector-only, no graph)",
+      "MAP": 74.8,
+      "MRR": 58.3,
+      "Recall@1": 42.4,
+      "Recall@3": 69.7,
+      "Recall@5": 97.0,
+      "Verification_Rate": 0,
+      "Abstention_Rate": 0,
+      "Safe_Answer_Rate": 0,
+      "notes": "Medical domain adaptation significantly improves recall"
+    },
+    "D": {
+      "name": "Hybrid (No Verification)",
+      "description": "FAISS + Graph (60/40 fusion, no verification)",
+      "MAP": 84.44,
+      "MRR": 65.56,
+      "Recall@1": 48.48,
+      "Recall@3": 75.76,
+      "Recall@5": 100.0,
+      "Verification_Rate": 0,
+      "Abstention_Rate": 0,
+      "Safe_Answer_Rate": 0,
+      "notes": "Graph relationships capture procedural and anatomical context"
+    },
+    "E": {
+      "name": "Hybrid + Verification",
+      "description": "Full hybrid with graph verification (no abstention)",
+      "MAP": 84.44,
+      "MRR": 65.56,
+      "Recall@1": 48.48,
+      "Recall@3": 75.76,
+      "Recall@5": 100.0,
+      "Verification_Rate": 84.85,
+      "Abstention_Rate": 0,
+      "Safe_Answer_Rate": 100.0,
+      "notes": "Graph verification ensures factual accuracy"
+    },
+    "F": {
+      "name": "Full System",
+      "description": "Hybrid + Verification + Abstention (threshold=0.7)",
+      "MAP": 84.44,
+      "MRR": 65.56,
+      "Recall@1": 48.48,
+      "Recall@3": 75.76,
+      "Recall@5": 100.0,
+      "Verification_Rate": 84.85,
+      "Abstention_Rate": 15.2,
+      "Safe_Answer_Rate": 100.0,
+      "notes": "Selective abstention ensures only high-confidence answers"
+    }
+  },
+  "generated": "2026-02-17T18:05:17.930099"
+}

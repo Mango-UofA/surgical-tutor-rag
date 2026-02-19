@@ -7,7 +7,8 @@ MONGODB_URI = os.getenv("MONGODB_URI", "mongodb://localhost:27017/surgical_tutor
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL", "https://api.openai.com/v1")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
-FAISS_INDEX_PATH = os.getenv("FAISS_INDEX_PATH", "./faiss_index.index")
+# Use absolute path for FAISS index to avoid write permission issues on Windows
+FAISS_INDEX_PATH = os.getenv("FAISS_INDEX_PATH") or os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "faiss_index.index"))
 
 # Image storage configuration
 IMAGE_STORAGE_PATH = os.getenv("IMAGE_STORAGE_PATH", "./uploaded_images")

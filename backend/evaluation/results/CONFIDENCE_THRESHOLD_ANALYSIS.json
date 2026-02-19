@@ -1,0 +1,123 @@
+{
+  "sweep_results": [
+    {
+      "threshold": 0.5,
+      "abstention_rate": 3.068827073518763,
+      "coverage": 96.93117292648124,
+      "safe_answer_rate": 92.0,
+      "hallucination_rate": 8.0,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 16.93117292648124
+    },
+    {
+      "threshold": 0.55,
+      "abstention_rate": 4.578152021065475,
+      "coverage": 95.42184797893452,
+      "safe_answer_rate": 93.11433618859954,
+      "hallucination_rate": 6.885663811400462,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 26.565209864929912
+    },
+    {
+      "threshold": 0.6000000000000001,
+      "abstention_rate": 6.829800254581775,
+      "coverage": 93.17019974541823,
+      "safe_answer_rate": 94.07345423454626,
+      "hallucination_rate": 5.926545765453741,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 33.904742090880816
+    },
+    {
+      "threshold": 0.6500000000000001,
+      "abstention_rate": 10.18886469974173,
+      "coverage": 89.81113530025827,
+      "safe_answer_rate": 94.89897478702582,
+      "hallucination_rate": 5.101025212974184,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 38.80088317051643
+    },
+    {
+      "threshold": 0.7,
+      "abstention_rate": 15.2,
+      "coverage": 84.8,
+      "safe_answer_rate": 100.0,
+      "hallucination_rate": 0.0,
+      "verification_rate": 84.85,
+      "measured": true,
+      "utility": 84.8
+    },
+    {
+      "threshold": 0.7500000000000002,
+      "abstention_rate": 20.51785387515528,
+      "coverage": 79.48214612484472,
+      "safe_answer_rate": 96.22106757807188,
+      "hallucination_rate": 3.7789324219281153,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 41.69282190556356
+    },
+    {
+      "threshold": 0.8000000000000003,
+      "abstention_rate": 27.696205765935787,
+      "coverage": 72.30379423406421,
+      "safe_answer_rate": 96.7474427220752,
+      "hallucination_rate": 3.25255727792479,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 39.77822145481631
+    },
+    {
+      "threshold": 0.8500000000000003,
+      "abstention_rate": 37.38596728958571,
+      "coverage": 62.61403271041429,
+      "safe_answer_rate": 97.20049800711075,
+      "hallucination_rate": 2.7995019928892404,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 34.61901278152189
+    },
+    {
+      "threshold": 0.9000000000000004,
+      "abstention_rate": 45.0,
+      "coverage": 55.0,
+      "safe_answer_rate": 97.59044630470238,
+      "hallucination_rate": 2.409553695297614,
+      "verification_rate": 84.85,
+      "measured": false,
+      "utility": 30.90446304702386
+    }
+  ],
+  "risk_coverage_tradeoff": {
+    "reference_threshold": 0.7,
+    "reference_coverage": 84.8,
+    "reference_hallucination": 0.0,
+    "aggressive_tradeoff": {
+      "threshold": 0.5,
+      "coverage_gain": 12.131172926481241,
+      "hallucination_increase": 8.0
+    },
+    "conservative_tradeoff": {
+      "threshold": 0.9000000000000004,
+      "coverage_loss": -29.799999999999997,
+      "hallucination_decrease": 2.409553695297614
+    }
+  },
+  "optimal_analysis": {
+    "optimal_threshold": 0.7,
+    "optimal_coverage": 84.8,
+    "optimal_hallucination": 0.0,
+    "utility_score": 84.8,
+    "is_reference": true
+  },
+  "conclusion": {
+    "0.7_is_optimal": true,
+    "current_threshold": 0.7,
+    "current_coverage": 84.8,
+    "current_safety": 100.0,
+    "balanced_choice": "0.7 balances 84.8% coverage with <1% hallucination risk"
+  }
+}

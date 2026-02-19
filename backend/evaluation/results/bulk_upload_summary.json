@@ -1,0 +1,129 @@
+{
+  "upload_date": "2026-02-17 20:29:11",
+  "source_directory": "C:\\Users\\smang\\Downloads\\new training docs",
+  "total_pdfs": 11,
+  "successful_uploads": 10,
+  "failed_uploads": 1,
+  "total_chunks_ingested": 967,
+  "total_entities_extracted": 550,
+  "total_nodes_created": 434,
+  "total_relationships_created": 389,
+  "initial_stats": {
+    "total_vectors": 0,
+    "graph_nodes": 0,
+    "graph_relationships": 0
+  },
+  "final_stats": {
+    "total_vectors": 0,
+    "graph_nodes": 0,
+    "graph_relationships": 0
+  },
+  "target_achieved": false,
+  "results": [
+    {
+      "success": true,
+      "filename": "9789241598552_eng.pdf",
+      "chunks": 201,
+      "entities": 103,
+      "nodes": 50,
+      "relationships": 45,
+      "total_vectors": 1360,
+      "time": 316.25170397758484
+    },
+    {
+      "success": true,
+      "filename": "9pscssicurrent.pdf",
+      "chunks": 33,
+      "entities": 61,
+      "nodes": 131,
+      "relationships": 126,
+      "total_vectors": 1393,
+      "time": 76.6954357624054
+    },
+    {
+      "success": true,
+      "filename": "acs-nsqip-geriatric-2016-guidelines.pdf",
+      "chunks": 52,
+      "entities": 51,
+      "nodes": 31,
+      "relationships": 27,
+      "total_vectors": 1445,
+      "time": 81.70590877532959
+    },
+    {
+      "success": true,
+      "filename": "e00665.full.pdf",
+      "chunks": 86,
+      "entities": 34,
+      "nodes": 21,
+      "relationships": 16,
+      "total_vectors": 1531,
+      "time": 125.43313360214233
+    },
+    {
+      "success": true,
+      "filename": "e006658.full.pdf",
+      "chunks": 86,
+      "entities": 34,
+      "nodes": 21,
+      "relationships": 16,
+      "total_vectors": 1617,
+      "time": 125.2307939529419
+    },
+    {
+      "success": true,
+      "filename": "e006659.full.pdf",
+      "chunks": 86,
+      "entities": 34,
+      "nodes": 21,
+      "relationships": 16,
+      "total_vectors": 1703,
+      "time": 127.83979272842407
+    },
+    {
+      "success": false,
+      "filename": "Essentials-of-General-Surgery-and-Surgical-Specialties-2019-6th-edition-extern.ir_.pdf",
+      "error": "HTTP 500: {\"detail\":\"Error in __cdecl faiss::FileIOWriter::FileIOWriter(const char *) at D:\\\\a\\\\faiss-wheels\\\\faiss-wheels\\\\third-party\\\\faiss\\\\faiss\\\\impl\\\\io.cpp:104: Error: 'f' failed: could not open ./faiss"
+    },
+    {
+      "success": true,
+      "filename": "General Surgery.pdf",
+      "chunks": 23,
+      "entities": 46,
+      "nodes": 27,
+      "relationships": 22,
+      "total_vectors": 2086,
+      "time": 41.3034725189209
+    },
+    {
+      "success": true,
+      "filename": "JCI_SSI_Toolkit.pdf",
+      "chunks": 179,
+      "entities": 64,
+      "nodes": 15,
+      "relationships": 11,
+      "total_vectors": 2265,
+      "time": 237.24775218963623
+    },
+    {
+      "success": true,
+      "filename": "therapeutic-guidelines-antimicrobial-prophylaxis-surgery.pdf",
+      "chunks": 190,
+      "entities": 108,
+      "nodes": 104,
+      "relationships": 99,
+      "total_vectors": 2455,
+      "time": 339.4690933227539
+    },
+    {
+      "success": true,
+      "filename": "the_2024_ilts_ilca_consensus_recommendations_for.15.pdf",
+      "chunks": 31,
+      "entities": 15,
+      "nodes": 13,
+      "relationships": 11,
+      "total_vectors": 2486,
+      "time": 42.24148464202881
+    }
+  ]
+}

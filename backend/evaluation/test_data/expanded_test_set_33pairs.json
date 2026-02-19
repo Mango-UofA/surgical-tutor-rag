@@ -1,0 +1,318 @@
+{
+  "metadata": {
+    "total_pairs": 33,
+    "original_pairs": 33,
+    "new_pairs": 0,
+    "generation_date": "2026-02-17T18:33:46.690351",
+    "target_size": 75,
+    "embedder": "emilyalsentzer/Bio_ClinicalBERT",
+    "retrieval_validation": "top-5 FAISS with BioClinicalBERT"
+  },
+  "qa_pairs": [
+    {
+      "question": "What was the cost difference between robotic and laparoscopic fundoplication in children according to Anderberg et al.?",
+      "answer": "Robotic fundoplication cost 9,582 Euros, while laparoscopic fundoplication cost 8,982 Euros, making robotic fundoplication 600 Euros more expensive.",
+      "chunk_id": 11,
+      "source": "sages.org-Surgical Treatment of GERD Systematic Review and Meta-Analysis.pdf",
+      "faiss_index": 392,
+      "retrieval_rank": 5,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What is the impact of further research on low-quality evidence with strong recommendation?",
+      "answer": "Further research is likely to have an important impact on our confidence in the estimate of effect and is likely to change the estimate.",
+      "chunk_id": 7,
+      "source": "1.pdf",
+      "faiss_index": 77,
+      "retrieval_rank": 3,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What tool was used to assess the risk of bias in randomized control trials?",
+      "answer": "The Cochrane Risk of Bias tool was used to assess the risk of bias for included randomized control trials.",
+      "chunk_id": 3,
+      "source": "sages.org-Surgical Treatment of GERD Systematic Review and Meta-Analysis.pdf",
+      "faiss_index": 384,
+      "retrieval_rank": 1,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What are the four stages of the GROW model as described by Singh et al.?",
+      "answer": "The four stages of the GROW model are Goals, Reality, Options, and Wrap-up.",
+      "chunk_id": 7,
+      "source": "sages.org-Educational Implications for Surgical Telementoring a Current Review with Recommendations for Future .pdf",
+      "faiss_index": 188,
+      "retrieval_rank": 2,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What was the perioperative cost in US dollars for robotic fundoplication according to Owen 2014?",
+      "answer": "The perioperative cost for robotic fundoplication according to Owen 2014 was 10,644 US dollars.",
+      "chunk_id": 9,
+      "source": "sages.org-Surgical Treatment of GERD Systematic Review and Meta-Analysis.pdf",
+      "faiss_index": 390,
+      "retrieval_rank": 5,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What was the overall complication rate for laparoscopic appendectomy (LA) mentioned in the text?",
+      "answer": "The overall complication rate for laparoscopic appendectomy (LA) mentioned in the text is 8.7%.",
+      "chunk_id": 3,
+      "source": "1.pdf",
+      "faiss_index": 73,
+      "retrieval_rank": 2,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "Which department is associated with the University of California San Diego School of Medicine?",
+      "answer": "The Division of Pediatric Surgery, Department of Surgery, is associated with the University of California San Diego School of Medicine.",
+      "chunk_id": 27,
+      "source": "sages.org-Intraoperative Imaging of the Common Bile Duct A Systematic Review.pdf",
+      "faiss_index": 298,
+      "retrieval_rank": 2,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What was the short-term mortality rate after cholecystostomy tube placement as reported in the 2007 systematic review?",
+      "answer": "The short-term mortality rate after cholecystostomy tube placement, either 30-day or in-hospital, was reported as 15.4% in the 2007 systematic review.",
+      "chunk_id": 27,
+      "source": "sages.org-Safe Cholecystectomy Multi-Society Practice Guideline and State of the Art Consensus Conference on Pr.pdf",
+      "faiss_index": 350,
+      "retrieval_rank": 3,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What age range was defined for children and adolescents in the review?",
+      "answer": "Children and adolescents were defined as those aged between 1 and 16 years old.",
+      "chunk_id": 4,
+      "source": "1.pdf",
+      "faiss_index": 74,
+      "retrieval_rank": 4,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What surgical approach did Walz MK and colleagues use in 2004 for adrenalectomy in primary adrenal neoplasias, and how many procedures were performed?",
+      "answer": "Walz MK and colleagues used the posterior retroperitoneoscopic approach for adrenalectomy in primary adrenal neoplasias, performing 325 consecutive procedures.",
+      "chunk_id": 27,
+      "source": "sages.org-Guidelines for the Minimally Invasive Treatment of Adrenal Pathology.pdf",
+      "faiss_index": 243,
+      "retrieval_rank": 2,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "How many articles were reviewed in detail to define the statements and recommendations in the 2020 guidelines?",
+      "answer": "In total, 157 articles were selected and reviewed in detail to define 48 statements and 51 recommendations.",
+      "chunk_id": 4,
+      "source": "1.pdf",
+      "faiss_index": 4,
+      "retrieval_rank": 4,
+      "source_file": "verified_test_set.json"
+    },
+    {
+      "question": "What procedures are compared in the population-based trend analysis by Zingg U, Rosella L, and Guller U for gastroesophageal reflux disease?",
+      "answer": "laparoscopic Nissen and Toupet fundoplications",
+      "chunk_id": 30,
+      "source": "sages.org-Surgical Treatment of GERD Systematic Review and Meta-Analysis.pdf",
+      "faiss_index": 411,
+      "source_file": "test_qa_pairs_from_faiss.json",
+      "retrieval_rank": 4
+    },
+    {
+      "question": "What model was used for the meta-analysis in non-randomized studies, and what ratios were calculated for dichotomous outcomes?",
+      "answer": "RevMan (Version 5.3.5) was used to perform meta-analysis using a Mantel-Haenszel random-effects model, and risk ratios (RR) and odds ratios (OR) were calculated for dichotomous outcomes from randomized and non-randomized studies, respectively.",
+      "chunk_id": 4,
+      "source": "sages.org-Bariatric Surgery and Relevant Comorbidities A Systematic Review and Meta-Analysis.pdf",
+      "faiss_index": 162,
+      "source_file": "test_qa_pairs_from_faiss.json",
+      "retrieval_rank": 5
+    },
+    {
+      "question": "What are the sensitivity and specificity of contrast-enhanced MRI compared to CT for diagnosing AA according to Kinner et al.?",
+      "answer": "MRI had sensitivity of 96.8% and specificity of 97.4%, while CT had sensitivity of 94.4% and specificity of 95.8%.",
+      "chunk_id": 3,
+      "source": "1.pdf",
+      "faiss_index": -1,
+      "category": "diagnostic_imaging",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What was the overall event rate for perioperative complications in sleeve patients, and what was the confidence interval?",
+      "answer": "The overall event rate was 8.70% (95% CI 5.83-12.85%).",
+      "chunk_id": 3,
+      "source": "sages.org-Bariatric Surgery and Relevant Comorbidities A Systematic Review and Meta-Analysis.pdf",
+      "faiss_index": -1,
+      "category": "complications",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What type of evidence is described as having 'important limitations' in RCTs?",
+      "answer": "Low-quality evidence with serious or very serious quality limitations in RCTs that affect the confidence in the estimate of effect.",
+      "chunk_id": 7,
+      "source": "1.pdf",
+      "faiss_index": 77,
+      "category": "evidence_quality",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 4
+    },
+    {
+      "question": "How many studies compared selective IOC against no IOC for KQ1, and what was the total number of patients in each group?",
+      "answer": "Five RCTs comparing 672 patients receiving selective IOC to 696 patients with no IOC.",
+      "chunk_id": 3,
+      "source": "sages.org-Intraoperative Imaging of the Common Bile Duct A Systematic Review.pdf",
+      "faiss_index": -1,
+      "category": "study_design",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What was the operative mortality percentage for patients undergoing elective interval cholecystectomy according to Gul et al.?",
+      "answer": "0% operative mortality rate.",
+      "chunk_id": 3,
+      "source": "sages.org-Safe Cholecystectomy Multi-Society Practice Guideline and State of the Art Consensus Conference on Pr.pdf",
+      "faiss_index": -1,
+      "category": "mortality",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What was the relative risk of serious adverse events in the POEM group compared to the PD group?",
+      "answer": "RR = 0.44 (95% CI 0.21-0.92), indicating POEM had significantly fewer serious adverse events.",
+      "chunk_id": 3,
+      "source": "sages.org-Guidelines for the Use of Peroral Endoscopic Myotomy POEM for the Treatment of Achalasia.pdf",
+      "faiss_index": -1,
+      "category": "safety",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What method is suggested for mitigating bile duct injury risk in patients with acute cholecystitis?",
+      "answer": "The critical view of safety (CVS) technique should be used to identify the cystic duct and artery before clipping.",
+      "chunk_id": 27,
+      "source": "sages.org-Safe Cholecystectomy Multi-Society Practice Guideline and State of the Art Consensus Conference on Pr.pdf",
+      "faiss_index": -1,
+      "category": "surgical_technique",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What is the recurrence rate of symptoms within 1 year following antibiotic-first treatment for uncomplicated acute appendicitis?",
+      "answer": "Approximately 27-35% recurrence rate within 1 year.",
+      "chunk_id": 10,
+      "source": "1.pdf",
+      "faiss_index": -1,
+      "category": "treatment_outcomes",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What is the relative risk and confidence interval for success/symptom resolution by Eckardt score after POEM compared to PD?",
+      "answer": "RR = 1.12 (95% CI 1.03-1.22), indicating POEM had superior symptom resolution.",
+      "chunk_id": 57,
+      "source": "sages.org-Guidelines for the Use of Peroral Endoscopic Myotomy POEM for the Treatment of Achalasia.pdf",
+      "faiss_index": -1,
+      "category": "treatment_outcomes",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What is the recommended first-line diagnostic tool for acute appendicitis in both adults and children according to WSES guidelines?",
+      "answer": "Ultrasound is recommended as the first-line imaging modality, followed by CT or MRI if ultrasound is inconclusive.",
+      "chunk_id": 10,
+      "source": "1.pdf",
+      "faiss_index": -1,
+      "category": "diagnostic_imaging",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What was the relative risk of intraoperative stone identification in observational studies comparing routine IOC to selective IOC?",
+      "answer": "RR = 2.26 (95% CI 1.04-4.93), showing routine IOC identifies more stones intraoperatively.",
+      "chunk_id": 3,
+      "source": "sages.org-Intraoperative Imaging of the Common Bile Duct A Systematic Review.pdf",
+      "faiss_index": -1,
+      "category": "diagnostic_performance",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What is the recommended time frame for performing an appendectomy in pediatric patients with uncomplicated acute appendicitis?",
+      "answer": "Within 24 hours of admission to avoid increased risk of perforation and complications.",
+      "chunk_id": 10,
+      "source": "1.pdf",
+      "faiss_index": -1,
+      "category": "timing",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What is the OR and I\u00c3\u201a\u00c2\u00b2 value for technical failures in studies with selective IOC versus no IOC?",
+      "answer": "OR = 1.05 (95% CI 0.32-3.43), I\u00c3\u201a\u00c2\u00b2 = 0%, indicating no significant difference in technical failures.",
+      "chunk_id": 3,
+      "source": "sages.org-Intraoperative Imaging of the Common Bile Duct A Systematic Review.pdf",
+      "faiss_index": -1,
+      "category": "technical_outcomes",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What are the procedural steps for right adrenalectomy as described in the text?",
+      "answer": "Lateral transabdominal approach: patient positioning, port placement, mobilization of right colon, identification of adrenal gland, vessel ligation, gland removal.",
+      "chunk_id": 10,
+      "source": "sages.org-Guidelines for the Minimally Invasive Treatment of Adrenal Pathology.pdf",
+      "faiss_index": -1,
+      "category": "surgical_technique",
+      "source_file": "miccai_test_set_50plus.json",
+      "retrieval_rank": 1
+    },
+    {
+      "question": "What was the overall complication rate for laparoscopic appendectomy (LA) as mentioned in the text?",
+      "answer": "8.7%",
+      "chunk_id": 3,
+      "source": "1.pdf",
+      "retrieval_rank": 2,
+      "batch": "rapid_generation_2"
+    },
+    {
+      "question": "How many articles were selected and reviewed in detail to define the statements and recommendations in the surgical text?",
+      "answer": "157 articles were selected and reviewed in detail.",
+      "chunk_id": 5,
+      "source": "1.pdf",
+      "retrieval_rank": 5,
+      "batch": "rapid_generation_2"
+    },
+    {
+      "question": "What type of evidence is described as having \"important limitations\" such as inconsistent results, methodological flaws, indirectness, or imprecision?",
+      "answer": "Evidence from RCTs with important limitations.",
+      "chunk_id": 7,
+      "source": "1.pdf",
+      "retrieval_rank": 3,
+      "batch": "rapid_generation_2"
+    },
+    {
+      "question": "What is the most appropriate first-line diagnostic tool for acute appendicitis in both adults and children, according to the 2020 guidelines?",
+      "answer": "POCUS (Point-of-care Ultrasound) is recommended as the most appropriate first-line diagnostic tool in both adults and children.",
+      "chunk_id": 10,
+      "source": "1.pdf",
+      "retrieval_rank": 1,
+      "batch": "rapid_generation_2"
+    },
+    {
+      "question": "What was the mean radiation dose of low-dose CT compared with standard CT in the OPTICAP randomized trial?",
+      "answer": "The mean radiation dose of low-dose CT was 3.33 mSv, compared with 4.44 mSv for standard CT.",
+      "chunk_id": 27,
+      "source": "1.pdf",
+      "retrieval_rank": 1,
+      "batch": "rapid_generation_2"
+    },
+    {
+      "question": "What percentage of agreement was obtained for the recommendation to avoid cross-sectional imaging before diagnostic +/- therapeutic laparoscopy for high-risk patients younger than 40 years old with specific AIR, Alvarado, and AAS scores?",
+      "answer": "68.0%",
+      "chunk_id": 30,
+      "source": "1.pdf",
+      "retrieval_rank": 3,
+      "batch": "rapid_generation_2"
+    }
+  ]
+}
