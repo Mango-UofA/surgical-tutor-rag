@@ -8,30 +8,7 @@
   year={2019}
 }
 
-@article{zhang2023biomedclip,
-  title={BiomedCLIP: A multimodal biomedical foundation model pretrained from fifteen million figure-caption pairs},
-  author={Zhang, Sheng and Xu, Yanbo and Usuyama, Naoto and Bagga, Jaspreet and Tinn, Robert and others},
-  journal={arXiv preprint arXiv:2303.00915},
-  year={2023}
-}
 
-@inproceedings{karwande2022chexrelnet,
-  title={CheXRelNet: An anatomy-aware model for tracking longitudinal relationships between chest x-rays},
-  author={Karwande, Gaurang and Mbakwe, Amarachi B and Wu, Joy T and Celi, Leo Anthony and Moradi, Mehdi and Lourentzou, Ismini},
-  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-  pages={581--591},
-  year={2022},
-  organization={Springer}
-}
-
-@inproceedings{mbakwe2023hierarchical,
-  title={Hierarchical vision transformers for disease progression detection in chest x-ray images},
-  author={Mbakwe, Amarachi B and Wang, Lyuyang and Moradi, Mehdi and Lourentzou, Ismini},
-  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-  pages={685--695},
-  year={2023},
-  organization={Springer}
-}
 
 @article{singhal2023med,
   title={Large language models encode clinical knowledge},
@@ -68,29 +45,7 @@
   year={2023}
 }
 
-@inproceedings{lau2018dataset,
-  title={A dataset of clinically generated visual questions and answers about radiology images},
-  author={Lau, Jason J and Gayen, Soumya and Ben Abacha, Asma and Demner-Fushman, Dina},
-  booktitle={Scientific Data},
-  volume={5},
-  pages={180251},
-  year={2018}
-}
 
-@inproceedings{liu2021contrastive,
-  title={Contrastive attention for automatic chest x-ray report generation},
-  author={Liu, Fenglin and Yin, Changchang and Wu, Xian and Ge, Shen and Zhang, Ping and Sun, Xu},
-  booktitle={Findings of the Association for Computational Linguistics: ACL-IJCNLP 2021},
-  pages={269--280},
-  year={2021}
-}
-
-@article{li2023halueval,
-  title={Halueval: A large-scale hallucination evaluation benchmark for large language models},
-  author={Li, Junyi and Cheng, Xiaoxue and Zhao, Wayne Xin and Nie, Jian-Yun and Wen, Ji-Rong},
-  journal={arXiv preprint arXiv:2305.11747},
-  year={2023}
-}
 
 @article{manakul2023selfcheckgpt,
   title={Selfcheckgpt: Zero-resource black-box hallucination detection for generative large language models},
@@ -104,15 +59,6 @@
   author={Yasunaga, Michihiro and Aghajanyan, Armen and Shi, Weijia and James, Rich and Leskovec, Jure and Liang, Percy and Lewis, Mike and Zettlemoyer, Luke and Yih, Wen-tau},
   journal={arXiv preprint arXiv:2211.12561},
   year={2022}
-}
-
-@article{zhang2020radiology,
-  title={Radiology report generation with a learned knowledge base and multi-modal alignment},
-  author={Zhang, Yixiao and Wang, Xiaosong and Xu, Ziyue and Yu, Qihang and Yuille, Alan and Xu, Daguang},
-  journal={Medical Image Analysis},
-  volume={64},
-  pages={101757},
-  year={2020}
 }
 
 @misc{sages2023guidelines,
@@ -140,36 +86,253 @@
   year={2020}
 }
 
-@article{johnson2019mimic,
-  title={{MIMIC-CXR}, a de-identified publicly available database of chest radiographs with free-text reports},
-  author={Johnson, Alistair EW and Pollard, Tom J and Berkowitz, Seth J and Greenbaum, Nathaniel R and Lungren, Matthew P and Deng, Chih-ying and Mark, Roger G and Horng, Steven},
-  journal={Scientific Data},
-  volume={6},
-  number={1},
-  pages={317},
+% ========================================
+% KEY SYSTEM COMPONENTS
+% ========================================
+
+@article{robertson2009probabilistic,
+  title={The probabilistic relevance framework: {BM25} and beyond},
+  author={Robertson, Stephen and Zaragoza, Hugo},
+  journal={Foundations and Trends in Information Retrieval},
+  volume={3},
+  number={4},
+  pages={333--389},
+  year={2009}
+}
+
+@article{johnson2019facebook,
+  title={Billion-scale similarity search with {GPUs}},
+  author={Johnson, Jeff and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
+  journal={IEEE Transactions on Big Data},
+  volume={7},
+  number={3},
+  pages={535--547},
+  year={2019},
+  note={FAISS library}
+}
+
+@inproceedings{neumann2019scispacy,
+  title={{ScispaCy}: Fast and robust models for biomedical natural language processing},
+  author={Neumann, Mark and King, Daniel and Beltagy, Iz and Ammar, Waleed},
+  booktitle={Proceedings of the 18th BioNLP Workshop and Shared Task},
+  pages={319--327},
   year={2019}
 }
 
-@article{wu2021chest,
-  title={Chest {ImaGenome} dataset for clinical reasoning},
-  author={Wu, Joy T and Syed, Amilcare and Ahmad, Hasan and Aggarwal, Ankit and Kalpathy-Cramer, Jayashree and Vijaykumar, Shriram and Johnson, Alistair EW and Celi, Leo A},
-  journal={arXiv preprint arXiv:2108.00316},
-  year={2021}
+@article{devlin2018bert,
+  title={{BERT}: Pre-training of deep bidirectional transformers for language understanding},
+  author={Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  journal={arXiv preprint arXiv:1810.04805},
+  year={2018}
 }
 
-@article{tang2020automated,
-  title={Automated abnormality classification of chest radiographs using deep convolutional neural networks},
-  author={Tang, Yu-Xing and Tang, You-Bao and Peng, Yifan and Yan, Ke and Bagheri, Mohammadhadi and Redd, Bernadette A and Brandon, Catherine J and Lu, Zhiyong and Han, Mei and Xiao, Jing and Summers, Ronald M},
-  journal={NPJ Digital Medicine},
-  volume={3},
-  number={1},
-  pages={70},
+@inproceedings{reimers2019sentence,
+  title={Sentence-{BERT}: Sentence embeddings using {S}iamese {BERT}-networks},
+  author={Reimers, Nils and Gurevych, Iryna},
+  booktitle={Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing},
+  pages={3982--3992},
+  year={2019}
+}
+
+% ========================================
+% BIOMEDICAL NLP & EMBEDDINGS
+% ========================================
+
+@article{lee2020biobert,
+  title={{BioBERT}: a pre-trained biomedical language representation model for biomedical text mining},
+  author={Lee, Jinhyuk and Yoon, Wonjin and Kim, Sungdong and Kim, Donghyeon and Kim, Sunkyu and So, Chan Ho and Kang, Jaewoo},
+  journal={Bioinformatics},
+  volume={36},
+  number={4},
+  pages={1234--1240},
   year={2020}
 }
 
-% Add more references as you write other sections
-% Template for additional entries:
+@article{gu2021domain,
+  title={Domain-specific language model pretraining for biomedical natural language processing},
+  author={Gu, Yu and Tinn, Robert and Cheng, Hao and Lucas, Michael and Usuyama, Naoto and Liu, Xiaodong and Naumann, Tristan and Gao, Jianfeng and Poon, Hoifung},
+  journal={ACM Transactions on Computing for Healthcare},
+  volume={3},
+  number={1},
+  pages={1--23},
+  year={2021},
+  note={PubMedBERT}
+}
 
+@article{huang2019clinicalbert,
+  title={{ClinicalBERT}: Modeling clinical notes and predicting hospital readmission},
+  author={Huang, Kexin and Altosaar, Jaan and Ranganath, Rajesh},
+  journal={arXiv preprint arXiv:1904.05342},
+  year={2019}
+}
+
+% ========================================
+% KNOWLEDGE GRAPHS & HYBRID RETRIEVAL
+% ========================================
+
+@article{yasunaga2021qa,
+  title={{QA-GNN}: Reasoning with language models and knowledge graphs for question answering},
+  author={Yasunaga, Michihiro and Ren, Hongyu and Bosselut, Antoine and Liang, Percy and Leskovec, Jure},
+  journal={arXiv preprint arXiv:2104.06378},
+  year={2021}
+}
+
+
+
+@inproceedings{karpukhin2020dense,
+  title={Dense passage retrieval for open-domain question answering},
+  author={Karpukhin, Vladimir and O{\u{g}}uz, Barlas and Min, Sewon and Lewis, Patrick and Wu, Ledell and Edunov, Sergey and Chen, Danqi and Yih, Wen-tau},
+  booktitle={Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing},
+  pages={6769--6781},
+  year={2020}
+}
+
+% ========================================
+% MEDICAL QA & RAG SYSTEMS
+% ========================================
+
+@article{zakka2023almanac,
+  title={{Almanac}: Retrieval-augmented language models for clinical medicine},
+  author={Zakka, Cyril and Shad, Rohan and Chaurasia, Akshay and Dalal, Alex R and Kim, Jennifer L and Moor, Michael and others},
+  journal={arXiv preprint arXiv:2303.01229},
+  year={2023}
+}
+
+@article{xiong2024benchmarking,
+  title={Benchmarking retrieval-augmented generation for medicine},
+  author={Xiong, Guangzhi and Jin, Qiao and Lu, Zhiyong and Zhang, Aidong},
+  journal={arXiv preprint arXiv:2402.13178},
+  year={2024}
+}
+
+% ========================================
+% HALLUCINATION DETECTION & VERIFICATION
+% ========================================
+
+@article{zhang2023siren,
+  title={{SIREN}'s song in the {AI} ocean: A survey on hallucination in large language models},
+  author={Zhang, Yue and Li, Yafu and Cui, Leyang and Cai, Deng and Liu, Lemao and Fu, Tingchen and Huang, Xinting and Zhao, Enbo and Zhang, Yu and Chen, Yulong and others},
+  journal={arXiv preprint arXiv:2309.01219},
+  year={2023}
+}
+
+@article{tonmoy2024comprehensive,
+  title={A comprehensive survey of hallucination mitigation techniques in large language models},
+  author={Tonmoy, SM Towhidul Islam and Zaman, SM Mehedi and Jain, Vinija and Rani, Anku and Rawte, Vipula and Chadha, Aman and Das, Amitava},
+  journal={arXiv preprint arXiv:2401.01313},
+  year={2024}
+}
+
+@article{gao2022rarr,
+  title={{RARR}: Researching and revising what language models say, using language models},
+  author={Gao, Luyu and Dai, Zhuyun and Pasupat, Panupong and Chen, Anthony and Chaganty, Arun Tejasvi and Fan, Yicheng and Zhao, Vincent Y and Lao, Ni and Lee, Hongrae and Juan, Da-Cheng and others},
+  journal={arXiv preprint arXiv:2210.08726},
+  year={2022}
+}
+
+@article{varshney2023stitch,
+  title={A stitch in time saves nine: Detecting and mitigating hallucinations of {LLM}s by validating low-confidence generation},
+  author={Varshney, Neeraj and Yao, Wenlin and Zhang, Hongming and Chen, Jianshu and Yu, Dong},
+  journal={arXiv preprint arXiv:2307.03987},
+  year={2023}
+}
+
+% ========================================
+% EVALUATION METRICS & BENCHMARKS
+% ========================================
+
+@inproceedings{thakur2021beir,
+  title={{BEIR}: A heterogenous benchmark for zero-shot evaluation of information retrieval models},
+  author={Thakur, Nandan and Reimers, Nils and R{\"u}ckl{\'e}, Andreas and Srivastava, Abhishek and Gurevych, Iryna},
+  booktitle={Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+  year={2021}
+}
+
+@article{jin2019pubmedqa,
+  title={{PubMedQA}: A dataset for biomedical research question answering},
+  author={Jin, Qiao and Dhingra, Bhuwan and Liu, Zhengping and Cohen, William W and Lu, Xinghua},
+  journal={arXiv preprint arXiv:1909.06146},
+  year={2019}
+}
+
+@article{pal2022medmcqa,
+  title={{MedMCQA}: A large-scale multi-subject multi-choice dataset for medical domain question answering},
+  author={Pal, Ankit and Umapathi, Logesh Kumar and Sankarasubbu, Malaikannan},
+  journal={arXiv preprint arXiv:2203.14371},
+  year={2022}
+}
+
+@article{jin2020disease,
+  title={What disease does this patient have? a large-scale open domain question answering dataset from medical exams},
+  author={Jin, Di and Pan, Eileen and Oufattole, Nassim and Weng, Wei-Hung and Fang, Hanyi and Szolovits, Peter},
+  journal={Applied Sciences},
+  volume={11},
+  number={14},
+  pages={6421},
+  year={2021}
+}
+
+% ========================================
+% CLINICAL GUIDELINES (Primary Sources)
+% ========================================
+
+@article{okamoto2018guidelines,
+  title={{Tokyo Guidelines 2018}: Flowchart for the management of acute cholecystitis},
+  author={Okamoto, Kohji and Suzuki, Kazuto and Takada, Tadahiro and Strasberg, Steven M and Asbun, Horacio J and Endo, Itaru and Iwashita, Yutaka and Hibi, Taizo and Pitt, Henry A and Umezawa, Akihiko and others},
+  journal={Journal of Hepato-Biliary-Pancreatic Sciences},
+  volume={25},
+  number={1},
+  pages={55--72},
+  year={2018}
+}
+
+@article{di2020world,
+  title={{World Society of Emergency Surgery (WSES) Jerusalem} guidelines for diagnosis and treatment of acute appendicitis},
+  author={Di Saverio, Salomone and Podda, Mauro and De Simone, Belinda and Ceresoli, Marco and Augustin, Goran and Gori, Alice and Boermeester, Marja and Sartelli, Massimo and Coccolini, Federico and Tarasconi, Antonio and others},
+  journal={World Journal of Emergency Surgery},
+  volume={15},
+  number={1},
+  pages={1--25},
+  year={2020}
+}
+
+@misc{who2016global,
+  title={{Global Guidelines for the Prevention of Surgical Site Infection}},
+  author={{World Health Organization}},
+  year={2016},
+  publisher={World Health Organization},
+  howpublished={\url{https://www.who.int/publications/i/item/9789241549882}}
+}
+
+@article{strasberg2013critical,
+  title={The critical view of safety: the {SAGES} guideline for preventing bile duct injury in laparoscopic cholecystectomy},
+  author={Strasberg, Steven M and Brunt, L Michael},
+  journal={Surgical Endoscopy},
+  volume={27},
+  number={11},
+  pages={4003--4010},
+  year={2013}
+}
+
+% ========================================
+% STATISTICAL METHODS
+% ========================================
+
+@article{cohen1988statistical,
+  title={Statistical power analysis for the behavioral sciences},
+  author={Cohen, Jacob},
+  journal={Hillsdale, NJ: Lawrence Erlbaum Associates},
+  year={1988}
+}
+
+@book{efron1994introduction,
+  title={An introduction to the bootstrap},
+  author={Efron, Bradley and Tibshirani, Robert J},
+  year={1994},
+  publisher={CRC press}
+}
+
+% Template for additional entries:
 % @inproceedings{author2024title,
 %   title={Paper Title},
 %   author={Author, First and Author, Second},
